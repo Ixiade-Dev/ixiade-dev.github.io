@@ -1,0 +1,374 @@
+<style>
+
+body {
+    background-color: #1f1f1f;
+    color: white;
+}
+pre {
+    border: 1px solid black;
+    background-color: #cfcfcf;
+    margin-top: 0;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.file {
+    font-style: italic;
+}
+
+.red {
+    color: red;
+}
+
+</style>
+<body>
+<H1>Formation Django - Partie 1</H1>
+<div>Note : en <span class="red">rouge</span>, variables pouvant être propres à votre programme, pensez à les modifier</div></br>
+<div class="title">Création d'un environnement virtuel</div>
+<p>Créons le projet en conservant les bonnes pratiques</p>
+<p>Commençons par installer un environnement virtuel avec la libairie pipenv</p>
+<div class="file">terminal</div>
+<pre><code>
+pipenv install
+
+ou
+
+py -m pipenv install
+</code>
+</pre>
+<p>"Entrons" dans l'environnement virtuel créé</p>
+<div class="file">terminal</div>
+<pre><code>
+pipenv shell
+
+ou
+
+py -m pipenv shell
+</code>
+</pre>
+<p>Installons la librairie Django</p>
+<pre><code>
+pip install django
+</code>
+</pre>
+<p>Bonne pratique oblige, créons un fichier requirements.txt qui stockera la liste des librairies installées (pensez à retaper la commande quand vous installerez d'autres librairies)</p>
+<div class="file">terminal</div>
+<pre><code>
+pip freeze &gt; requirements.txt
+</code>
+</pre>
+<div class="title">Préparer Git</div>
+<p>On peut également préparer le terrain pour git en initiant git puis en créant un fichier .gitignore dans lequel nous placerons les fichiers que nous ne voulons pas versionner (dans l'exemple présent, les fichiers Pipfile généré par pipenv)</p>
+<div class="file">terminal</div>
+<pre><code>
+git init
+</code>
+</pre>
+<div class="file">.gitignore</div>
+<pre><code>
+Pipfile
+Pipfile.lock
+</code>
+</pre>
+<div class="title">Création d'un projet</div>
+<p>Passons aux choses sérieuses en créant notre projet django (note : le "." est nécessaire, autrement la commande créera un nouveau dossier, cela pourrait poser des problèmes d'import à l'avenir</p>
+<div class="file">terminal</div>
+<pre><code>
+django-admin startproject nomduprojet .
+</code>
+</pre>
+<p>Nous devons maintenant migrer les modèles existants de Django vers la base de donnée</p>
+<div class="file">terminal</div>
+<pre><code>
+py manage.py migrate
+</code>
+</pre>
+<p>Vous pouvez vérifier que tout fonctionne en lançant le serveur ! Il s'ouvrira par défaut en 127.0.0.1:8000</p>
+<div class="file">terminal</div>
+<pre><code>
+py manage.py runserver
+</code>
+</pre>
+<div class="title">Création d'une application</div>
+<p>Créons maintenant notre application</p>
+<div class="file">terminal</div>
+<pre><code>
+django-admin startapp nomdelapplication
+
+ou
+
+py manage.py startapp nomdelapplication
+</code>
+</pre>
+<p>Nous devons ajouter notre application à la liste INSTALLED_APPS dans les settings du projet afin que celle-ci soit prise en compte</p>
+<div class="file">settings.py</div>
+<pre><code>
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'nomdelapplication',
+]
+</code>
+</pre>
+<div class="title">Création d'une première vue + template</div>
+<p>Créons une première vue pour tester notre serveur</p>
+<div class="file">views.py</div>
+<pre><code>
+def index(request):
+    return render(
+        request,
+        ""
+    )
+</code>
+</pre>
+<p>Dans le dossier de l'application, créez un dossier templates dans lequel vous créerez un nouveau dossier du nom de votre application. C'est le chemin par défaut qu'utilise Django pour récupérer les templates.</p>
+<p>Créez-y le fichier "index.html"</p>
+<pre><code>
+    |
+    *nomdelapplication
+            |
+            *templates
+            |       |
+            |       *nomdelapplication
+            |               |
+            |               *index.html
+            *__init__.py
+            *admin.py
+            *apps.py
+            *models.py
+            *views.py
+            etc.
+</code>
+</pre>
+<p>Ajoutons un message de test dans le fichier index.html</p>
+<div class="file">index.html</div>
+<pre><code>
+Hello World !
+</code>
+</pre>
+<p>Nous allons maintenant créer un chemin d'accès à la vue : par défaut, l'url 127.0.0.1:8000 devra nous rediriger vers index.html</p>
+<div class="file">urls.py</div>
+<pre><code>
+import <span class="red">*nomdelapp*</span>.views as <span class="red">*xx*</span>
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', tv.index, name="index"),
+]
+</code>
+</pre>
+<p>Relancez le serveur si nécessaire et testez votre vue !</p>
+<div class="title">Création des modèles</div>
+<p>Nous allons maintenant créer des modèles. Les modèles correspondent aux objets qui seront stockés en base de donnée</p>
+<div class="file">models.py</div>
+<pre><code>
+class Worker(models.Model):
+    name = models.CharField(max_length=15, null=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=20, null=False)
+    worker = models.ManyToManyField(Worker, blank=True)
+
+    def __str__(self):
+        return self.name
+</code>
+</pre>
+<p>Une fois cela fait, nous devons créer le fichier de migration puis migrer les nouvelles tables vers la base de donnée</p>
+<div class="file">terminal</div>
+<pre><code>
+py manage.py makemigrations
+py manage.py migrate
+</code>
+</pre>
+<div class="title">Ajouter des objets en base de donnée</div>
+<p>Pour le moment, nous allons créer des objets via l'interface admin que nous devons un peu configurer</p>
+<div class="file">admin.py</div>
+<pre><code>
+import <span class="red">*nomdelapp*</span>.models as <span class="red">*xx*</span>
+
+
+@admin.register(<span class="red">*xx*</span>.Worker)
+class WorkerAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(<span class="red">*xx*</span>.Team)
+class TeamAdmin(admin.ModelAdmin):
+    pass
+</code>
+</pre>
+<p>Afin d'accéder à l'espace admin, il nous faut créer un super utilisateur</p>
+<div class="file">terminal</div>
+<pre><code>
+py manage.py createsuperuser
+</code>
+</pre>
+<p>Rendez vous à l'url 127.0.0.1:8000/admin puis créez des workers, des teams et affiliez des workers aux teams</p>
+<div class="title">Passer des objets de la vue au template</div>
+<p>Faisons passer nos objets en base de donnée vers le template index, commençons par modifier notre vue</p>
+<div class="file">views.py</div>
+<pre><code>
+import <span class="red">*nomdelapp*</span>.models as <span class="red">*xx*</span>
+
+
+def index(request):
+    teams = <span class="red">*xx*</span>.Team.objects.all()
+    return render(
+        request,
+        "teams/index.html",
+        {"teams": teams},
+    )
+</code>
+</pre>
+<p>Modifions ensuite notre template pour y faire apparaitre nos données</p>
+<div class="file">index.html</div>
+<pre><code>
+{% load static %}
+{{ teams }}
+</code>
+</pre>
+<p>Ce n'est pas vraiment le rendu que l'on attendait ! Poussons un peu les choses</p>
+<div class="file">index.html</div>
+<pre><code>
+{% load static %}
+{% for team in teams %}
+&lt;div&gt;{{team}}&lt;/div&gt;
+{% endfor %}
+</code>
+</pre>
+<p>Maintenant faisons apparaitre les workers</p>
+<div class="file">index.html</div>
+<pre><code>
+{% load static %}
+{% for team in teams %}
+&lt;div&gt;{{team}}
+    &lt;ul&gt;
+        {% for worker in team.worker.all %}
+        &lt;li&gt;{{ worker }}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+{% endfor %}
+</code>
+</pre>
+<div class="title">Récuperer un objet en BDD</div>
+<p>Nous allons voir comment récupérer un objet particulier en base de donnée. Pour cela nous allons créer une page qui affichera tous les workers d'une équipe. L'objet à récupérer sera donc une équipe</p>
+<p>Commençons par notre vue</p>
+<div class="file">views.py</div>
+<pre><code>
+def show_team(request, team_id):
+    team = <span class="red">*xx*</span>.Team.objects.get(id=team_id)
+    return render(
+        request,
+        "teams/team.html",
+        {"team": team},
+    )
+</code>
+</pre>
+<p>Ajoutons l'url a la liste urlpatterns du fichier urls.py</p>
+<div class="file">urls.py</div>
+<pre><code>
+    &lt;a href="{% url 'show_team' team_id=team.id %}"&gt;{{team}}&lt;/a&gt;
+</code>
+</pre>
+<p>Créez le template "team.html" dans le même dossier que "index.html" puis remplissez le de la sorte</p>
+<pre><code>
+{% load static %}
+&lt;div&gt;
+    {{team}}
+    &lt;ul&gt;
+        {% for worker in team.worker.all %}
+        &lt;li&gt;{{ worker }}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;a href="{% url 'index' %}"&gt;Retour à l'index&lt;/a&gt;
+</code>
+</pre>
+<p>Puis ajoutons un lien sur le nom des teams dans index.html</p>
+<div class="file">index.html</div>
+<pre><code>
+{% load static %}
+{% for team in teams %}
+&lt;div&gt;
+    &lt;a href="{% url 'show_team' team_id=team.id %}"&gt;{{team}}&lt;/a&gt;
+    &lt;ul&gt;
+        {% for worker in team.worker.all %}
+        &lt;li&gt;{{ worker }}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+{% endfor %}
+</code>
+</pre>
+<div class="title">Récupérer plusieurs objets en BDD</div>
+<p>Maintenant regardons comment récupérer plusieurs objets en base de donnée. Nous allons créer une page affichant toute les teams auxquel un worker est affilié, nous devrons donc récupérer un worker et plusieurs teams</p>
+<p>Comme d'habitude, attaquons nous à la vue en premier</p>
+<div class="file">views.py</div>
+<pre><code>
+def show_worker(request, worker_id):
+    worker = <span class="red">*xx*</span>.Worker.objects.get(id=worker_id)
+    teams = <span class="red">*xx*</span>.Team.objects.filter(worker=worker)
+    return render(
+        request,
+        "teams/worker.html",
+        {
+            "teams": teams,
+            "worker": worker,
+        }
+    )
+
+</code>
+</pre>
+<p>Ajoutons l'url a la liste urlpatterns du fichier urls.py</p>
+<div class="file">urls.py</div>
+<pre><code>
+    path('worker/&lt;int:worker_id&gt;/', tv.show_worker, name="show_worker"),
+</code>
+</pre>
+<p>Créez un fichier "worker.html" dans vos templates</p>
+<div class="file">worker.html</div>
+<pre><code>
+{% load static %}
+&lt;div&gt;
+    {{worker}}
+    &lt;ul&gt;
+        {% for team in teams %}
+        &lt;li&gt;{{ team }}&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;a href="{% url 'index' %}"&gt;Retour à l'index&lt;/a&gt;
+</code>
+</pre>
+<p>Et enfin, ajoutons un lien sur le nom des workers dans l'index</p>
+<div class="file">index.html</div>
+<pre><code>
+{% load static %}
+{% for team in teams %}
+&lt;div&gt;
+    &lt;a href="{% url 'show_team' team_id=team.id %}"&gt;{{team}}&lt;/a&gt;
+    &lt;ul&gt;
+        {% for worker in team.worker.all %}
+        &lt;li&gt;&lt;a href="{% url 'show_worker' worker_id=worker.id %}"&gt;{{ worker }}&lt;/a&gt;&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+{% endfor %}
+</code>
+</pre>
+<div class="title">Fin de la 1ere partie</div>
+</body>

@@ -1,0 +1,136 @@
+<style>
+
+    body {
+        background-color: #1f1f1f;
+        color: white;
+    }
+    pre {
+        border: 1px solid black;
+        background-color: #cfcfcf;
+        margin-top: 0;
+        color: black;
+        margin-bottom: 25px;
+    }
+    
+    .title {
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .file {
+        font-style: italic;
+    }
+    
+    .red {
+        color: red;
+    }
+
+    .green {
+        color: green;
+    }
+    
+</style>
+<body>
+<H1>Formation Django - Template de base et Statics</H1>
+<div>Note : en <span class="red">rouge</span>, variables pouvant être propres à votre programme, pensez à les modifier</div></br>
+<div class="title">Création d'un template de base</div>
+<p>Dans votre dossier template, créez un fichier base.html (note : en tapant "html" dans VSCode celui-ci vous proposera des choix. Sélectionner "html:5" vous permet de gagner du temps)</p>
+<div class="file">base.html</div>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    {% load static %}
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Formation Django&lt;/title&gt;
+&lt;/head&gt;
+&lt;header&gt;
+    FORMATION DJANGO
+&lt;/header&gt;
+&lt;body&gt;
+    {% block content %}
+    {% endblock %}
+&lt;/body&gt;
+&lt;footer&gt;---&lt;/footer&gt;
+&lt;/html&gt;
+</code>
+</pre>
+<p>Ensuite, rendez vous sur l'un de vos fichier html</p>
+<pre><code>
+<span class="green"><i>tout en haut</i></span>
+{% extends "<span class="red">*nomdelapp*</span>/base.html" %}
+{% block content %}
+
+<span class="green"><i>votre code</i></span>
+
+<span class="green"><i>tout en bas</i></span>
+{% endblock %}
+</code>
+</pre>
+<p>Tous les templates modifiés de la sorte intégreront le template base.html. Dans le cas présent, cela comprend le head, le header et le footer</p>
+<div class="title">Appliquer des statics</div>
+<p>Voyons comment ajouter des statics à nos templates. Les statics peuvent être du CSS, du JS, des images, des sons etc.</p>
+<p>Nous allons nous focaliser sur l'ajout de CSS. Commençons par créer les bons dossiers dans le répertoire de l'application puis ajoutons-y un fichier "base.css"</p>
+<pre><code>
+    |
+    *nomdelapplication
+            |
+            *static
+            |   |
+            |   *nomdelapplication
+            |           |
+            |           *css
+            |               |
+            |               *base.css
+            |
+            *templates
+            |       |
+            |       *nomdelapplication
+            |               |
+            |               *base.html
+            |               *index.html
+            *__init__.py
+            *admin.py
+            *apps.py
+            *models.py
+            *views.py
+            etc.
+</code>
+</pre>
+<p>Ajoutons y un peu de code</p>
+<div class="file">base.css</div>
+<pre><code>
+header, footer {
+    background-color: aqua;
+}
+</code>
+</pre>
+<p>Et enfin, modifier le fichier base.html afin d'ajouter la balise link vers notre fichier css</p>
+<div class="file">base.html</div>
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+        {% load static %}
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;link href="{% static '<span class="red">*nomdelapp*</span>/css/base.css' %}" rel="stylesheet" /&gt;
+        &lt;title&gt;Formation Django&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;header&gt;
+        FORMATION DJANGO
+    &lt;/header&gt;
+    &lt;body&gt;
+        {% block content %}
+        {% endblock %}
+    &lt;/body&gt;
+    &lt;footer&gt;---&lt;/footer&gt;
+    &lt;/html&gt;
+</code>
+</pre>
+<p>Actualisez et vérifiez !</p>
+<div class="title">Fin de la partie bonus</div>
+</body>
