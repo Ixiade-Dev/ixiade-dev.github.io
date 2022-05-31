@@ -1,0 +1,354 @@
+<style>
+
+body {
+    background-color: #1f1f1f;
+    color: white;
+}
+pre {
+    border: 1px solid black;
+    background-color: #cfcfcf;
+    margin-top: 0;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.file {
+    font-style: italic;
+}
+
+.red {
+    color: red;
+}
+
+</style>
+<body>
+<H1>Formation Django - Partie 2</H1>
+<div class="title">Création d'un formulaire pour ajouter des workers</div>
+<p>Dans le dossier de l'application, créez le fichier forms.py, nous allons y ajouter un formulaire</p>
+<div class="file">forms.py</div>
+<pre><code>
+from django import forms
+
+
+class WorkerForm(forms.Form):
+    name = forms.CharField(label="Nom du worker", max_length=20)
+</code>
+</pre>
+<p>Créons maintenant la vue dédiée</p>
+<div class="file">views.py</div>
+<pre><code>
+import <span class="red">*nomdelapp*</span>.forms as <span class="red">*xx*</span>
+
+
+def create_worker(request):
+    form = <span class="red">*xx*</span>.WorkerForm()
+    return render(
+        request,
+        "teams/create_worker.html",
+        {"form": form},
+    )
+</code>
+</pre>
+<p>Ajoutons l'url a la liste urlpatterns du fichier urls.py</p>
+<div class="file">urls.py</div>
+<pre><code>
+    path('create_worker', <span class="red">*xx*</span>.create_worker, name="create_worker"),
+</code>
+</pre>
+<p>Dans le dossier templates, créez le fichier create_worker.html</p>
+<div class="file">create_worker.html</div>
+<pre><code>
+{% load static %}
+&lt;div&gt;Ajouter un worker&lt;/div&gt;
+&lt;form method="POST" action=""&gt;
+    {% csrf_token %}
+    {{ form }}
+    &lt;input type="submit" value="Créer"&gt;
+&lt;/form&gt;
+&lt;a href="{% url 'index' %}">Retour à l'index&lt;/a&gt;
+</code>
+</pre>
+<p>Nous allons modifier l'index afin d'avoir un accès vers notre nouvelle page</p>
+<div class="file">index.html</div>
+<pre><code>
+&lt;a href="{% url 'create_worker' %}"&gt;
+    &lt;button&gt;Ajouter un worker&lt;/button&gt;
+&lt;/a&gt;
+</code>
+</pre>
+<p>Nous avons une vue et un template pour afficher notre nouvelle page, nous devons maintenant créer la vue qui effectuera l'opération d'ajouter un worker</p>
+<div class="file">views.py</div>
+<pre><code>
+def add_worker(request):
+    pass
+</code>
+</pre>
+<p>Ajoutons l'url a la liste urlpatterns du fichier urls.py</p>
+<div class="file">urls.py</div>
+<pre><code>
+    path('add_worker/', tv.add_worker, name="add_worker"),
+</code>
+</pre>
+<p>Ajoutons notre nouvelle url à l'attribut "action" de notre formulaire HTML, les données du formulaire seront transmises vers notre vue add_worker lorsque celui-ci sera validé</p>
+<div class="file">create_worker.html</div>
+<pre><code>
+&lt;form method="POST" action="{% url 'add_worker' %}"&gt;
+</code>
+</pre>
+<p>Mettons la vue add_worker à jour pour traiter les données du formulaire</p>
+<div class="file">views.py</div>
+<pre><code>
+from django.shortcuts import render, redirect
+
+
+def add_worker(request):
+    if request.method == "POST":
+        form = <span class="red">*xx*</span>.WorkerForm(request.POST)
+        if form.is_valid():
+            new_worker = <span class="red">*xx*</span>.Worker(
+                name=form.cleaned_data["name"]
+            )
+            new_worker.save()
+            return redirect("index")
+</code>
+</pre>
+<div class="title">Suppression des workers</div>
+<p>Créons la vue permettant de supprimer des workers</p>
+<div class="file">views.py</div>
+<pre><code>
+def delete_worker(request, worker_id):
+    worker = <span class="red">*xx*</span>.Worker.objects.get(id=worker_id)
+    worker.delete()
+    return redirect("create_worker")
+</code>
+</pre>
+<p>Ajoutons l'url a la liste urlpatterns du fichier urls.py</p>
+<div class="file">urls.py</div>
+<pre><code>
+    path('delete_worker/&lt;int:worker_id&gt;/', <span class="red">*xx*</span>.delete_worker, name="delete_worker"),
+</code>
+</pre>
+<p>On modifie la vue create_worker pour afficher la liste des workers dans le template</p>
+<div class="file">views.py</div>
+<pre><code>
+def create_worker(request):
+    form = <span class="red">*xx*</span>.WorkerForm()
+    workers = <span class="red">*xx*</span>.Worker.objects.all()
+    return render(
+        request,
+        "teams/create_worker.html",
+        {
+            "form": form,
+            "workers": workers
+        },
+    )
+</code>
+</pre>
+<p>Ajoutons un lien sur le template afin de supprimer les workers</p>
+<div class="file">create_worker.html</div>
+<pre><code>
+{% load static %}
+&lt;div&gt;Ajouter un worker&lt;/div&gt;
+&lt;form method="POST" action="{% url 'add_worker' %}"&gt;
+    {% csrf_token %}
+    {{ form }}
+    &lt;input type="submit" value="Créer"&gt;
+&lt;/form&gt;
+&lt;div&gt;Liste des workers&lt;/div&gt;
+&lt;ul&gt;
+    {% for worker in workers %}
+    &lt;li&gt;{{worker}} &lt;a href="{% url 'delete_worker' worker_id=worker.id %}"&gt;&lt;button&gt;Supprimer&lt;/button&gt;&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+&lt;a href="{% url 'index' %}"&gt;Retour à l'index&lt;/a&gt;
+</code>
+</pre>
+<p>On peut également changer le redirect de la vue add_worker vers create_worker</p>
+<div class="file">views.py</div>
+<pre><code>
+def add_worker(request):
+    if request.method == "POST":
+        form = <span class="red">*xx*</span>.WorkerForm(request.POST)
+        if form.is_valid():
+            new_worker = <span class="red">*xx*</span>.Worker(
+                name=form.cleaned_data["name"]
+            )
+            new_worker.save()
+            return redirect("create_worker")
+</code>
+</pre>
+<div class="title">Créer une condition IF dans le template</div>
+<p>Supprimez tous les workers d'une de vos team. Sur l'index, celle-ci continue d'apparaitre alors qu'elle est vide, réglons ça :</p>
+<div class="file">index.html</div>
+<pre><code>
+{% if team.worker.count &gt; 0 %}
+&lt;div&gt;
+    &lt;a href="{% url 'show_team' team_id=team.id %}"&gt;{{team}}&lt;/a&gt;
+    &lt;ul&gt;
+        {% for worker in team.worker.all %}
+        &lt;li&gt;&lt;a href="{% url 'show_worker' worker_id=worker.id %}"&gt;{{ worker }}&lt;/a&gt;&lt;/li&gt;
+        {% endfor %}
+    &lt;/ul&gt;
+&lt;/div&gt;
+{% endif %}
+</code>
+</pre>
+<p>Les teams vides n'apparaissent désormais plus sur l'index.</p>
+<p>On peut également appliquer certain traitement sur les variables importées dans le template via les pipes. Essayez ceci :</p>
+<div class="file">index.html</div>
+<pre><code>
+{{team|upper}}
+</code>
+</pre>
+<file class="title">Ajouter un worker à une team</file>
+<p>Pour aller un peu plus loin que Django, nous allons utiliser une requête JavaScript pour cet exemple (ça va bien se passer)</p>
+<p>Commençons par créer la vue</p>
+<div class="file">views.py</div>
+<pre><code>
+def add_worker_to_team(request):
+    pass
+</code>
+</pre>
+<p>Nous devons penser à ajouter les teams au template create_worker</p>
+<div class="file">views.py</div>
+<pre><code>
+def create_worker(request):
+    form = <span class="red">*xx*</span>.WorkerForm()
+    workers = <span class="red">*xx*</span>.Worker.objects.all()
+    teams = <span class="red">*xx*</span>.Team.objects.all()
+    return render(
+        request,
+        "teams/create_worker.html",
+        {
+            "form": form,
+            "workers": workers,
+            "teams": teams,
+        },
+    )
+</code>
+</pre>
+<p>Ajoutons l'url a la liste urlpatterns du fichier urls.py</p>
+<div class="file">urls.py</div>
+<pre><code>
+    path('add_worker_to_team/', <span class="red">*xx*</span>.add_worker_to_team, name="add_worker_to_team"),
+</code>
+</pre>
+<p>On met à jour notre page html en ajoutant une liste a option et du script</p>
+<div class="file">create_worker.html</div>
+<pre><code>
+{% for worker in workers %}
+&lt;li&gt;{{worker}}&lt;/br&gt;
+&lt;select onchange="addWorkerToTeam(this, '{{worker.id}}');"&gt;
+    &lt;option value="default" disabled selected&gt;Ajouter à une team&lt;/option&gt;
+    {% for team in teams %}
+    {% if worker not in team.worker.all %}
+    &lt;option value="{{team.id}}"&gt;{{team}}&lt;/option&gt;
+    {% endif %}
+    {% endfor %}
+&lt;/select&gt;
+    &lt;/br&gt;
+    &lt;a href="{% url 'delete_worker' worker_id=worker.id %}"&gt;
+        Supprimer le worker
+    &lt;/a&gt;
+&lt;/li&gt;
+{% endfor %}
+&lt;script&gt;
+    function addWorkerToTeam(elem, workerId) {
+        return fetch(
+            "{% url 'add_worker_to_team' %}",
+            {
+                method: "POST",
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: JSON.stringify({
+                    team_id: elem.value,
+                    worker_id: workerId,
+                })
+            }
+        ).then(response =&gt; location.reload())
+    };
+&lt;/script&gt;
+</code>
+</pre>
+<p>Créons la vue qui traitera les données transmises via JavaScript</p>
+<div class="file">views.py</div>
+<pre><code>
+import json
+
+
+def add_worker_to_team(request):
+    if request.method == "POST":
+        data = json.loads(request.body.decode(encoding="utf-8"))
+        team = tm.Team.objects.get(id=int(data["team_id"]))
+        worker = tm.Worker.objects.get(id=int(data["worker_id"]))
+        team.worker.add(worker)
+        team.save()
+        return HttpResponse()
+</code>
+</pre>
+<div class="title">Supprimer un worker d'une team</div>
+<p>Créons la vue dédiée</p>
+<div class="file">views.py</div>
+<pre><code>
+def remove_worker_from_team(request, worker_id, team_id):
+    worker = <span class="red">*xx*</span>.Worker.objects.get(id=worker_id)
+    team = <span class="red">*xx*</span>.Team.objects.get(id=team_id)
+    team.worker.remove(worker)
+    team.save()
+    return redirect("create_worker")
+</code>
+</pre>
+<p>Ajoutons l'url</p>
+<div class="file">urls.py</div>
+<pre><code>
+    path('remove_worker_from_team/&lt;int:worker_id&gt;/&lt;int:team_id&gt;', <span class="red">*xx*</span>.remove_worker_from_team, name="remove_worker_from_team"),
+</code>
+</pre>
+<p>Mettons à jour le fichier html</p>
+<div class="file">create_worker.html</div>
+<pre><code>
+{% load static %}
+&lt;div&gt;Ajouter un worker&lt;/div&gt;
+&lt;form method="POST" action="{% url 'add_worker' %}"&gt;
+    {% csrf_token %}
+    {{ form }}
+    &lt;input type="submit" value="Créer"&gt;
+&lt;/form&gt;
+&lt;div&gt;Liste des workers&lt;/div&gt;
+&lt;ul&gt;
+    {% for worker in workers %}
+    &lt;li&gt;{{worker}}&lt;/br&gt;
+        Dans les équipes :
+        &lt;ul&gt;
+            {% for team in teams %}
+            {% if worker in team.worker.all %}
+            &lt;li&gt;{{team}} - &lt;a href="{% url 'remove_worker_from_team' worker_id=worker.id team_id=team.id %}"&gt;Retirer&lt;/a&gt;&lt;/li&gt;
+            {% endif %}
+            {% endfor %}
+        &lt;/ul&gt;
+        
+        &lt;select onchange="addWorkerToTeam(this, '{{worker.id}}');"&gt;
+            &lt;option value="default" disabled selected&gt;Ajouter à une team&lt;/option&gt;
+            {% for team in teams %}
+            {% if worker not in team.worker.all %}
+            &lt;option value="{{team.id}}"&gt;{{team}}&lt;/option&gt;
+            {% endif %}
+            {% endfor %}
+        &lt;/select&gt;
+        &lt;/br&gt;
+        &lt;a href="{% url 'delete_worker' worker_id=worker.id %}"&gt;
+            Supprimer le worker
+        &lt;/a&gt;
+    &lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+&lt;a href="{% url 'index' %}"&gt;Retour à l'index&lt;/a&gt;
+</code>
+</pre>
+</body>
