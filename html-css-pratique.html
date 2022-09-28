@@ -217,11 +217,11 @@ footer {
 <p>Dans le cas présent, une petite astuce permet de faire ce qu'on recherche en 3 lignes tout en étant responsive !</p>
 <div><i>style.css</i></div>
 <pre><code>header {
-    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">#Plus d'infos sur les flexbox</a>
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">/* Plus d'infos sur les flexbox */</a>
     display: flex;
-    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/justify-content">#Plus d'infos sur la propriété justify-content</a>
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/justify-content">/* Plus d'infos sur la propriété justify-content */</a>
     justify-content: space-between;
-    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/align-items">#Plus d'infos sur la propriété align-items</a>
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/align-items">/* Plus d'infos sur la propriété align-items */</a>
     align-items: center;
     <span class="comment">/* Attention les propriétés précédentes ne fonctionnent qu'avec la propriété display: flex; */</span>
 }
@@ -266,13 +266,32 @@ footer {
 <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="hf-5"/>
 <p>Positionnons maintenant le footer à sa place, c'est à dire en pied de page. Nous allons opter pour une solution bien moins fine que la flexbox !</p>
 <div><i>style.css</i></div>
-<pre><code><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">#Plus d'infos sur la propriété position</a>
+<pre><code><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">/* Plus d'infos sur la propriété position */</a>
 footer {
     <span class="comment">/* On spécifie une width, autrement elle sera égale à 0 une fois passé en positionnement absolu. */</span>
     width: 100%;
     height: 30px;
     position: absolute;
     bottom: 0;
+}</code></pre>
+<p>Ajoutons du contenu à notre footer. Un lien vers linkedin par exemple.</p>
+<div><i>index.css</i></div>
+<pre><code>&lt;footer&gt;
+    &lt;a href="*lienversvotrelinkedin*"&gt;Mon linkedin&lt;/a&gt;
+</code></pre>
+<div><i>style.css</i></div>
+<pre><code>footer {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: white;
 }</code></pre>
 <p>Nous en avons terminé avec header/footer, maintenant ajoutons du contenu sur notre page !</p>
 <hr id="body-1">
