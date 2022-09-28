@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation HTML/CSS - Pratique</title>
+    <link href="css/html-css.css" rel="stylesheet">
+</head>
+<body>
+    <H1>Formation HTML/CSS - Pratique</H1>
+    <div class="list-title">Création des fichiers</div>
+    <ul>
+        <li><a href="#create-1">Création du fichier HTML</a></li>
+        <li><a href="#create-2">Création du fichier CSS</a></li>
+        <li><a href="#create-3">Import du fichier CSS</a></li>
+    </ul>
+    <div class="list-title">Création header/footer</div>
+    <ul>
+        <li><a href="#hf-1">Création des éléments</a></li>
+        <li><a href="#hf-2">Inspection d'une page web</a></li>
+        <li><a href="#hf-3">Mettre une image</a></li>
+        <li><a href="#hf-4">Positionner des éléments dans le header</a></li>
+        <li><a href="#hf-5">Positionner le footer</a></li>
+    </ul>
+    <div class="list-title">Ajout du contenu</div>
+    <ul>
+        <li><a href="#body-1">Grid</a></li>
+        <li><a href="#body-2">Responsive</a></li>
+        <li><a href="#body-3">Ajouter une vidéo</a></li>
+        <li><a href="#body-4">Créer un formulaire</a></li>
+    </ul>
+    <div class="list-title">Bonus: Javascript</div>
+    <ul>
+        <li><a href="#js-1">Bienvenue en enfer</a></li>
+    </ul>
+    <hr id="create-1">
+    <div class="title">Création des fichiers</div>
+    <p>Commencez par créer un répertoire de travail, nommez le avec votre trigramme. NOTE : si vous utilisez VSCode, allez dans "fichier" puis selectionnez "Enregistrement automatique"</p>
+    <p>Occupons nous maintenant du fichier HTML. Utilisez votre éditeur de texte pour créer un nouveau fichier puis saisissez :</p>
+<pre><code>Hello World !</code></pre>
+    <p>Sauvegardez le fichier sous le nom index.html, ouvrez le maintenant avec un navigateur web, et magie :</p>
+    <div class="example">Hello World !</div>
+    <p>Félicitation ! Vous savez désormais coder en HTML ! Mais allons tout de même un peu plus loin, effacez d'abord le contenu de votre fichier.</p>
+    <p>Comme nous l'avons vu dans la théorie, posons la base de notre page HTML. Si vous utilisez VSCode, tapez "html" puis cliquez sur "html:5", ou copiez tout simplement le code suivant :</p>
+    <div><i>index.html</i></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Modifions le un peu:</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;ABO (votre trigramme)&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Hello World !
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Sauvegardez le et vérifiez que tout est ok.</p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="create-2"/>
+<p>Maintenant créons un fichier CSS</p>
+<p><i>Mais pourquoi ne pas mettre le CSS directement dans le HTML ?</i></p>
+<p>Parce que ma façon de faire est la meilleure.</p>
+<img src="pic/S8MoRId2.jpg" style="width:600px;">
+<p>Dans votre répértoire de travail, créez un nouveau dossier nommé "css", créez-y un fichier "style.css".</p>
+<p>Maintenant, ajoutons-y un peu de code.</p>
+<div><i>style.css</i></div>
+<pre><code>body {
+    color: red;
+}
+</code></pre>
+<p>Pensez à sauvegardez le fichier si vous n'avez pas de sauvegarde automatique</p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="create-3"/>
+<p>Importons notre fichier css sur notre page HTML comme nous l'avons vu dans la théorie</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;ABO&lt;/title&gt;
+    &lt;link href="css/style.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Hello World !
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Actualisez la page (il faut parfois vider le cache de la page pour que vos changements CSS soient pris en compte - ctrl+F5 sur windows) et admirez :</p>
+<div class="example" style="color: red">Hello World !</div>
+<p>Nous avons désormais une page HTML et un fichier CSS qui travaillent ensemble ! Effacez le "Hello World !" du HTML puis videz le fichier CSS, nous allons créer une vraie page !</p>
+<hr id="hf-1">
+<div class="title">Création header/footer</div>
+<p>Commençons par ajouter les éléments &lt;header&gt; (en tête) et &lt;footer&gt; (pied de page) à l'élément &lt;body&gt;.</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;body&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Maintenant ajoutons une couleur (sombre) aux arrière-plans de nos nouveaux éléments.</p>
+<div><i>style.css</i></div>
+<pre><code>header, footer {
+    background-color: blue;
+}
+</code></pre>
+<p>Actualisez et... rien ! C'est parce que nos éléments header et footer sont vides et n'ont aucune hauteur (propriété height) définie. Réparons ceci :</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;VOTRE PRÉNOM&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+&lt;/body&gt;
+</code></pre>
+<div><i>style.css</i></div>
+<pre><code>header, footer {
+    background-color: blue;
+}
+
+footer {
+    height: 30px;
+}
+
+<span class="comment">/* Voici les unités de mesures les plus fréquemment utilisées */</span>
+<span class="comment">/* px : pixel */</span>
+<span class="comment">/* % : pourcentage */</span>
+<span class="comment">/* rem : correspond à la hauteur de la police d'écriture du document (par défaut 16px) */</span>
+<span class="comment">/* em : correspond à la hauteur de la police d'écriture de l'élément */</span>
+</code></pre>
+<p>Regardons ça de nouveau.</p>
+<img src="pic/hf-1.PNG" style="width: 1100px;">
+<p>Le titre est difficile à lire, passons le en blanc !</p>
+<div><i>style.css</i></div>
+<pre><code>header h1 {
+    color: white;
+}
+</code></pre>
+<img src="pic/hf-2.PNG" style="width: 1100px;">
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="hf-2"/>
+<p>Vous vous êtes peut-être demandé d'où viennent les espaces blancs autour des éléments et entre le header et le footer. Après tout, on ne les a codé nulle part. Inspectons la page !</p>
+<p>Allez sur le navigateur, clic droit + inspecter. Assurez vous d'être dans l'onglet Elements</p>
+<img src="pic/hf-3.PNG">
+<p>D'ici, vous pouvez voir tous les éléments, voir la place qu'ils prennent sur la page et même effectuer des modifications temporaires. Essayez par exemple de modifier la couleur d'arrière plan du header</p>
+<p>Bref, nous sommes ici pour vérifier d'où viennent les espaces blancs. Passez votre souris au dessus de chaque éléments (dans la fenêtre d'inspection), quelque chose devrait vous alerter.</p>
+<img src="pic/hf-4.PNG" alt="">
+<p>Les éléments body et h1 sont entourés de orange, cela veut dire qu'ils ont une marge extérieure (paramètre margin). Pourtant nous n'avons rien codé de tel, ce sont justes des paramètres par défaut mais heureusement, nous pouvons les modifier.</p>
+<div><i>style.css</i></div>
+<pre><code>header h1, body {
+    margin: 0;
+}
+</code></pre>
+<img src="pic/hf-5.PNG" alt="" style="width:1100px;">
+<p>Bon, ça rend moins bien sur le moment, mais ça nous sera utile par la suite !</p>
+<p>NOTE : Dans l'outil d'inspection, un espace orange correspond à une marge extérieure (margin) et un espace vert correspond à une marge intérieure (padding).</p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="hf-3"/>
+<p>Maintenant, mettons une image ! Pour afficher une image, on utilise la balise &lt;img&gt; en précisant la source de l'image (url si l'image est sur internet ou son chemin si elle est sur votre ordinateur</p>
+<p>Crééz un dossier "img" dans votre répertoire de travail pour enregistrez-y une image de votre portrait. NOTE : à ce stade, votre arborescence devrait ressembler à ceci :</p>
+<img src="pic/hf-6.PNG" alt="">
+<p>Ensuite, dans le header, créons un élément &lt;div&gt; pour contenir notre image (ce n'est pas nécessaire mais cela rend plus simple la manipulation de l'élément).</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;header&gt;
+    &lt;h1&gt;VOTRE PRÉNOM&lt;/h1&gt;
+    &lt;div&gt;
+        &lt;img src="img/portrait.jpg"&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+</code></pre>
+<p>Vous pouvez actualiser pour contempler le résultat. Il est possible que votre image soit plus ou moins grande, standardisons ça avec la propriété width (note : par défaut, la proportion hauteur/largeur est conservée).</p>
+<div><i>style.css</i></div>
+<pre><code>header img {
+    width: 150px;
+}
+</code></pre>
+<p>Maintenant, changeons notre image en carré. On ne peut pas modifier le paramètre height, cela casserait les proportions de l'image. Par contre nous pouvons modifier l'élément &lt;div&gt; qui contient l'image.</p>
+<div><i>style.css</i></div>
+<pre><code>header div {
+    <span class="comment">/* On spécifie la largeur, par défaut, une div prendra 100% de la largeur de son parent. */</span>
+    width: 150px;
+    height: 150px;
+    <span class="comment">/* Modifier la hauteur ne suffira pas : l'image débordera de la div. */</span>
+    <span class="comment">/* Pour pallier à ça, on peut dire à la div "masque tout ce qui dépasse" avec la propriété overflow. */</span>
+    overflow: hidden;
+}
+</code></pre>
+<p>Ok ! Nous avons notre carré avec notre image à l'intérieur. Maintenant, changeons ce carré en cercle et donnons lui une bordure.</p>
+<div><i>style.css</i></div>
+<pre><code>header div {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 150px;
+    border: 2px solid white;
+}
+</code></pre>
+<p>Si tout s'est bien passé, vous avez quelque chose comme ceci :</p>
+<img src="pic/hf-7.PNG" alt="" style="width: 1100px;">
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="hf-4"/>
+<p>Maintenant, repositionnons un peu tout ça. Il existe des dizaines de façon différentes de positionner des éléments avec CSS, que ce soit en ajoutant des marges, en forçant une position etc.</p>
+<p>Dans le cas présent, une petite astuce permet de faire ce qu'on recherche en 3 lignes tout en étant responsive !</p>
+<div><i>style.css</i></div>
+<pre><code>header {
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">#Plus d'infos sur les flexbox</a>
+    display: flex;
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/justify-content">#Plus d'infos sur la propriété justify-content</a>
+    justify-content: space-between;
+    <a href="https://developer.mozilla.org/fr/docs/Web/CSS/align-items">#Plus d'infos sur la propriété align-items</a>
+    align-items: center;
+    <span class="comment">/* Attention les propriétés précédentes ne fonctionnent qu'avec la propriété display: flex; */</span>
+}
+</code></pre>
+<img src="pic/hf-8.png" alt="" style="width:1100px;">
+<p>C'est mieux ! Cependant nos éléments sont aux extrémités de l'écran, ce n'est pas très classe. Rapprochons les du centre.</p>
+<p>On pourrait se dire qu'ajouter de la marge à gauche et à droite pourrait être une bonne idée. Mais si ça rend bien sur votre écran, ça ne sera peut être pas le cas sur celui d'un autre avec une résolution plus petite</p>
+<img src="pic/hf-9.png" alt="" style="width:1100px;">
+<p>L'idéal serait de replacer nos éléments dans un élément parent auquel nous attribuerons une taille maximale puis que nous centrerons à l'écran.</p>
+<img src="pic/hf-10.png" alt="" style="width:1100px;">
+<div><i>index.html</i></div>
+<pre><code>&lt;header&gt;
+    &lt;section&gt;
+        &lt;h1&gt;Amaury&lt;/h1&gt;
+        &lt;div&gt;
+            &lt;img src="img/portrait.jpg"&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/header&gt;
+</code></pre>
+<p>Modifions le css de l'élément header, remplaçons le par l'élément section</p>
+<div><i>style.css</i></div>
+<pre><code>section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    <span class="comment">/* 1300px correspond à la taille standard minimale d'un écran d'ordinateur */</span>
+    max-width: 1300px;
+    <span class="comment">/* la valeur auto sur la propriété margin centre l'élément horizontalement par rapport à son élément parent. */</span>
+    margin: auto;
+    <span class="comment">/* On ajoute un padding pour décoller l'image de la bordure. */</span>
+    padding: 10px;
+}</code></pre>
+<p>Actualisez et modifier la taille de la fenêtre pour vérifier que tout s'adapte bien.</p>
+<p>Nous terminerons le header en ajustant la taille de votre prénom.</p>
+<div><i>style.css</i></div>
+<pre><code>header h1 {
+    color: white;
+    font-size: 50px;
+}
+</code></pre>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="hf-5"/>
+<p>Positionnons maintenant le footer à sa place, c'est à dire en pied de page. Nous allons opter pour une solution bien moins fine que la flexbox !</p>
+<div><i>style.css</i></div>
+<pre><code><a href="https://developer.mozilla.org/fr/docs/Web/CSS/position">#Plus d'infos sur la propriété position</a>
+footer {
+    <span class="comment">/* On spécifie une width, autrement elle sera égale à 0 une fois passé en positionnement absolu. */</span>
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+}</code></pre>
+<p>Nous en avons terminé avec header/footer, maintenant ajoutons du contenu sur notre page !</p>
+<hr id="body-1">
+<div class="title">Ajout du contenu</div>
+<p>Voici l'objectif :</p>
+<img src="pic/body-1.png" alt="">
+<p>Première étape : créer deux éléments qui prendront chacun une part égale d'un élément parent. Comme toujours il existe plusieurs façon de faire mais nous allons utiliser ici un outil CSS parfait pour notre cas : les grilles ou grid.</p>
+<p><a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout"></a>Plus d'infos sur la propriété grid.</p>
+<p>On commencera par le CSS.</p>
+<div><i>style.css</i></div>
+<pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.grid-span-1 {
+    grid-column: span 1;
+    min-height: 500px;
+    <span class="comment">/* On donne temporairement couleur d'arrière plan à cette classe afin de la repérer plus simplement. */</span>
+    background-color: antiquewhite;
+}</code></pre>
+<div><i>index.html</i></div>
+<pre><code>&lt;header&gt;
+    &lt;section&gt;
+        &lt;h1&gt;Amaury&lt;/h1&gt;
+        &lt;div&gt;
+            &lt;img src="img/portrait.jpg"&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/header&gt;
+&lt;section class="container"&gt;
+    &lt;div class="grid-span-1"&gt;&lt;/div&gt;
+    &lt;div class="grid-span-1"&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;footer&gt;&lt;/footer&gt;
+</code></pre>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="body-2"/>
+<p>Le moment est bien choisi pour parler du responsive. Essayer de réduire la largeur de votre navigateur. Nos deux nouveaux éléments se retrouvent compressés et restent côte à côte. Tant qu'ils sont vides, cela ne posent pas de problème, mais nous avons l'intention de les remplir ! De la même façon, notre header est un peu "massif" pour de plus petites résolutions. Voyons ce que nous pouvons y faire.</p>
+<div><i>style.css</i></div>
+<pre><code><span class="comment">/* Ici, on dit au CSS "modifie/applique des propriétés pour les éléments suivants */</span>
+<span class="comment">/* si la taille de l'écran est égale ou inférieur à 768px". */</span>
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+    }
+
+    header img {
+        width: 75px;
+    }
+    
+    header div {
+        height: 75px;
+        width: 75px;
+        border-radius: 75px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+<span class="comment">/* Voici la liste des points de rupture (breakpoints) afin d'adapter au mieux son responsive : */</span>
+<span class="comment">/* 320px-480px : smartphone */</span>
+<span class="comment">/* 481px-768px : tablette */</span>
+<span class="comment">/* 769px-1024px : petit écran pc portable */</span>
+<span class="comment">/* 1025px-1280px : écran pc portable */</span>
+<span class="comment">/* au dessus de 1281px : écran pc bureau */</span>
+<span class="comment">/* Si nous avions voulu créer une plage responsive uniquement pour les tablettes, nous aurions fait : */</span>
+<span class="comment">/* @media screen and (min-width: 481px) and (max-width: 768px) {} */</span></code></pre>
+<p>Modifiez la taille de votre navigateur pour vérifier que tout fonctionne. Une fois que tout est ok, supprimez la propriété background-color de  la classe grid-span-1.</p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="body-3"/>
+<p>Remplissons la colonne de gauche, préparons le terrain avant d'aller chercher la vidéo.</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;section class="container"&gt;
+    &lt;div class="grid-span-1 video-div"&gt;
+        &lt;div class="title"&gt;Le titre de votre vidéo&lt;/div&gt;
+        &lt;div class="video"&gt;&lt;/div&gt;
+        &lt;div class="comment"&gt;Votre commentaire sur la vidéo&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="grid-span-1 form-div"&gt;&lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+<p>Allez ensuite sur Youtube, trouvez la vidéo que vous voulez partager et cliquer sur... partager !</p>
+<p>Puis sur "intégrer".</p>
+<img src="pic/body-2.PNG" alt="">
+<p>Copiez le code et collez le dans notre div .video.</p>
+<img src="pic/body-3.PNG" alt="">
+<p>Supprimez les attributs height et width de votre élément iframe.</p>
+<p>Occupons nous de l'esthétique. Vous devriez ne pas être perdu.</p>
+<div><i>style.css</i></div>
+<pre><code>.video-div {
+    text-align: center;
+}
+
+.title {
+    color: blue;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.video {
+    padding: 20px;
+}
+
+.video iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.comment {
+    font-size: 20px;
+}</code></pre>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="body-4"/>
+<p>Créons maintenant un super formulaire dans la partie de droite ! Attention c'est un gros bloc</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;div class="grid-span-1 form-div"&gt;
+    &lt;div class="title"&gt;Formulaire&lt;/div&gt;
+    <span class="comment">&lt;!-- On place chaque parties du formulaire dans un élément div afin que ceux-ci apparaissent les uns sous les autres</span>
+    <span class="comment">autrement, ils apparaitraient les uns à côté des autres. --&gt;</span>
+    &lt;form action=""&gt;
+        &lt;div&gt;
+            <span class="comment">&lt;!-- &lt;br&gt; sert à revenir à la ligne, autrement le label serait à côté de l'input.</span>
+            <span class="comment">L'attribut for de l'élément label fait référence à l'id de l'input concernée. A quoi ça sert ?</span>
+            <span class="comment">Si l'utilisateur clique sur le label, l'input sera selectionné. --&gt;</span>
+            &lt;label for="name-input"&gt;&lt;b&gt;Votre nom&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
+            <span class="comment">&lt;!-- L'attribut name simplifie la récupération des données contenu dans le formulaire. --&gt;</span>
+            &lt;input type="text" name="form-name" id="name-input"&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;b&gt;Avez vous aimé la vidéo ?&lt;/b&gt;&lt;br&gt;
+            &lt;label for="radio-yes"&gt;Oui
+                <span class="comment">&lt;!-- Sur les input:radio, l'attribut name permet de déterminer à quel ensemble appartient l'input --&gt;</span>
+                &lt;input type="radio" name="form-radio" id="radio-yes" value="yes"&gt;
+            &lt;/label&gt;
+            &lt;label for="radio-no"&gt;Non
+                &lt;input type="radio" name="form-radio" id="radio-no" value="no"&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label for="user-comment"&gt;&lt;b&gt;Dites nous en plus :&lt;/b&gt;&lt;/label&gt;&lt;br&gt;
+            <span class="comment">&lt;!-- Pour les longues réponses, on préfére utiliser un élément textarea à un élément input:text</span>
+            <span class="comment">car textarea permet à l'utilisateur de revenir à la ligne. --&gt;</span>
+            &lt;textarea name="form-textarea" id="user-comment" rows="10"&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;input type="submit"&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+<p>Appliquons le CSS:</p>
+<div><i>style.css</i></div>
+<pre><code>.video-div, .form-div {
+    text-align: center;
+}
+<span class="comment">/* Notez la façon de faire référence à un élément input ayant l'attribut type configuré sur text. */</span>
+<span class="comment">/* Cela fonctionne avec tous les attributs */</span>
+input[type=text], textarea {
+    width: 70%;
+}
+
+form div {
+    padding: 20px;
+}
+
+form b {
+    font-size: 20px;
+}</code></pre>
+<p>Pas mal hein ? Remplissez votre formulaire et cliquez sur "Envoyer" !</p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="body-5"/>
+<p>Comme vous avez pu le constater, rien ne se produit... presque ! Regardez l'url en haut de votre navigateur, elle contient des données !</p>
+<hr id="js-1">
+<div class="title">Bonus: JavaScript</div>
+<p>Si on peut se permettre d'aborder cette partie, c'est que vous avez été performant et que vous voulez <s>souffrir</s> aller au bout des choses.</p>
+<p>En vrai c'est facile (pour moi de le dire).</p>
+<p>Dans votre répertoire de travail, crééz un dossier "js" puis placez un fichier nommé "script.js" à l'intérieur</p>
+<p>Ensuite importons notre script dans index.html.</p>
+<div><i>index.html</i></div>
+<pre><code>&lt;/body&gt;
+<span class="comment">&lt;!-- Le script se place TOUJOURS après le contenu de la page. --&gt;</span>
+&lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/html&gt;</code></pre>
+<p>Notez qu'on aurait pu directement ajouter le code entre les balises "script"</p>
+<p>Voici le code à saisir dans script.js. Je vais essayer de commenter au maximum !</p>
+<div><i>script.js</i></div>
+<pre><code><span class="comment">// Dans JS, une variable doit être déclarée à sa première apparition</span>
+<span class="comment">// ainsi le programme comprends qu'une nouvelle variable a été instanciée </span>
+<span class="comment">// et qu'elle pourra réapparaître plus tard dans le programme.</span>
+<span class="comment">// Auparavant, cela était fait en tapant "var" avant le nom de sa variable.</span>
+<span class="comment">// Cela fonctionne toujours mais on préfère désormais utiliser const et let.</span>
+<span class="comment">// const = on déclare une constante (dont la valeur ne changera jamais).</span>
+<span class="comment">// let = on déclare une variable (dont la valeur peut changer).</span>
+
+<span class="comment">// On commence par instancier la constante form qui correspond à notre formulaire html.</span>
+const form = document.querySelector("form");
+
+<span class="comment">// Ensuite on "écoute" l'événement "submit" sur notre formulaire.</span>
+<span class="comment">// En bref : si l'utilisateur clique sur "Envoyer", on effectue les actions suivantes.</span>
+form.addEventListener("submit", (event) => {
+    <span class="comment">// preventDefault() permet d'éviter à la page de se recharger lorsque l'on submit le formulaire.</span>
+    event.preventDefault();
+    <span class="comment">// On instancie la variable answer qui sera égale à ce que retournera la fonction gatherFormData().</span>
+    let answer = gatherFormData();
+    <span class="comment">// On envoie la réponse (de façon peu élégante) à l'utilisateur.</span>
+    alert(answer);
+})
+
+<span class="comment">// Ici on déclare une nouvelle fonction avec "function".</span>
+function gatherFormData() {
+    <span class="comment">// On converti la constante "form" en un objet FormData.</span>
+    <span class="comment">// Cela nous permet de récupérer les données très simplement.</span>
+    let formData = new FormData(form);
+    <span class="comment">// On récupére le nom de l'utilisateur.</span>
+    let name = formData.get("form-name");
+    <span class="comment">// On récupère ce que retournera la fonction likeOrDislike avec un paramètre</span>
+    <span class="comment">// qui correspond à la valeur retournée par les input:radio</span>
+    let like = likeOrDislike(formData.get("form-radio"));
+    let comment = formData.get("form-textarea");
+    <span class="comment">// On retourne une phrase que l'on construit à l'aide des valeurs qu'on a récupéré.</span>
+    return (
+        name
+        + " "
+        + like
+        + " votre vidéo, et voici son commentaire : \""
+        + comment
+        + "\"."
+    )
+}
+
+function likeOrDislike(radioValue) {
+    <span class="comment">// Si la valeur des input:radio est égale à "yes", on retourne "a aimé".</span>
+    <span class="comment">// Autrement, on retourne "n'a pas aimé".</span>
+    return (radioValue == "yes") ? "a aimé" : "n'a pas aimé";
+}</code></pre>
+<p>Remplissez le formulaire, validez le et la magie s'opérera !</p>
+<hr>
+<div class="title">Fin de la formation, merci à toutes et à tous !</div>
+</body>
+</html>

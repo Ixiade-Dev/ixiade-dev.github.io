@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation HTML/CSS - Théorie</title>
+    <link href="css/html-css.css" rel="stylesheet">
+    <link href="css/button-64.css" rel="stylesheet">
+</head>
+
+<body>
+<H1>Formation HTML/CSS - Théorie</H1>
+<div class="list-title">HTML</div>
+<ul>
+    <li><a href="#html-1">Description du HTML</a></li>
+    <li><a href="#html-2">Comment créer un fichier HTML</a></li>
+    <li><a href="#html-3">Les attributs HTML</a></li>
+</ul>
+<div class="list-title">CSS</div>
+<ul>
+    <li><a href="#css-1">Description du CSS</a></li>
+    <li><a href="#css-2">Ajouter des propriétés CSS à un élément HTML</a></li>
+    <li><a href="#css-3">Façons d'implémenter du CSS à une page HTML</a></li>
+    <li><a href="#css-4">Les classes et les ids</a></li>
+    <li><a href="#css-5">Interaction CSS sur les éléments parents/enfants</a></li>
+</ul>
+<div class="list-title">Javascript</div>
+<ul>
+    <li><a href="#js-1">Description de Javascript</a></li>
+</ul>
+<hr id="html-1">
+<div class="title">Le HTML</div>
+<p>HTML signifie "HyperText Markup Language". C'est un langage de balises utilisé pour structurer et donner du sens au contenu web. Par exemple : définir des paragraphes, titres et tables de données ou encore intégrer des images ou des vidéos dans une page.</p>
+<p><a href="https://fr.w3docs.com/apprendre-html/tableau-des-tags-html.html#tags-pour-la-stylisation-tags-semantiques-21">Voici une liste de balises (ou tags) HTML</a>. Pour cette formation, c'est surtout les tags pour la stylisation nous intéresserons.</p>
+<details class="details-pic">
+    <summary>Note : malgré des balises très diverses, la plupart des pages HTML font face à cette réalité.</summary>
+    <p>
+        <img src="pic/html_expectation.png" style="width:600px;">
+    </p>
+</details>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="html-2"/>
+<p>Créer un fichier HTML est très simple : ouvrez un éditeur de texte, créez un fichier puis sauvegardez le avec l'extension ".html" !</p>
+<p>Voici un petit exemple de HTML :</p>
+<pre><code>&lt;div&gt;
+    &lt;h3&gt;Un titre&lt;/h3&gt;
+    &lt;p&gt;Un texte avec des mots en &lt;b&gt;gras&lt;/b&gt;, en &lt;i&gt;italiques&lt;/i&gt;, &lt;u&gt;soulignés&lt;/u&gt;...&lt;/p&gt;
+    &lt;details&gt;
+        &lt;summary&gt;Cliquez ici !&lt;/summary&gt;
+        &lt;p&gt;Et ce texte apparaît !&lt;/p&gt;
+    &lt;/details&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Qui donnera ceci :</p>
+<div class="example">
+    <h3>Un titre</h3>
+    <p>Un texte avec des mots en <b>gras</b>, en <i>italiques</i>, <u>soulignés</u>...</p>
+    <details>
+        <summary>Cliquez ici !</summary>
+        <p>Et ce texte apparaît !</p>
+    </details>
+</div>
+<p>Une page HTML "standard" contient quasiment toujours certains éléments tel que les balises &lt;html&gt; ou &lt;body&gt;. Si vous utilisez Visual Sudio Code, essayez de taper "html" dans un fichier HTML, la fenêtre suivante devrait apparaitre :</p>
+<img src="pic/html_vscode.png">
+<p>Sélectionnez "html:5", voici ce qui devrait apparaitre :</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="html-3"/>
+<p>Vous constatez peut être que certains éléments contiennent des informations, ce sont des attributs. Les attributs sont des valeurs supplémentaires qui configurent les éléments ou ajustent leur comportement de différentes manières pour répondre aux critères souhaités par les utilisateurs. Voici un rapide exemple :</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;div title="Hello World !"&gt;
+    Survolez moi !
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example" title="Hello World !">
+            Survolez moi !
+        </div>
+    </div>
+</div>
+<p><a href="https://www.w3schools.com/tags/ref_attributes.asp">Voici une liste d'attribut HTML</a>.</p>
+
+<hr id="css-1">
+<div class="title">Le CSS</div>
+<p>CSS désigne Cascading Style Sheets (pour Feuilles de style en cascade). C'est un langage de règles de style utilisé pour mettre en forme le contenu HTML. Par exemple : en modifiant la couleur d'arrière-plan ou les polices, ou en disposant le contenu en plusieurs colonnes.</p>
+<div>En résumé :</div>
+<div class="container-2">
+    <div class="grid-span-1">
+        <div>Sans CSS</div>
+        <div class="example" style="height: 4rem;">
+            <button>Je suis un bouton moche</button>
+        </div>
+    </div>
+    <div class="grid-span-1">
+        <div>Avec CSS</div>
+        <div class="example sexy" style="height: 4rem;">
+            <button class="button-64" role="button" >
+                <span>Je suis un bouton sexy</span>
+            </button>
+        </div>
+    </div>
+</div>
+<p><a href="https://www.w3schools.com/cssref/default.asp">Voici une liste de propriétés CSS.</a></p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="css-2"/>
+<p>Voyons maintenant comment "écrire" du CSS pour le HTML suivant :</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;div&gt;
+    Hello World !
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example">
+            <div>Hello World !</div>
+        </div>
+    </div>
+</div>
+<p>Changeons la couleur de "Hello World" pour du rouge.</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code><span class="comment">&lt;!-- On ouvre une balise "style" pour placer notre CSS --&gt;</span>
+&lt;style&gt;
+<span class="comment">/* On spécifie l'élément sur lequel on applique notre propriété */</span>
+div {
+    <span class="comment">/* On saisit la propriété CSS puis on lui donne sa valeur */</span>
+    <span class="comment">/* N'oubliez pas le point-virgule pour clore la ligne  */</span>
+    color: red;
+}
+&lt;/style&gt;
+
+&lt;div&gt;
+    Hello World !
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example" style="color:red;">
+            Hello World !
+        </div>
+    </div>
+</div>
+
+<p>Maintenant changeons la couleur de l'arrière plan en orange saumon Yoomaneo :</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;style&gt;
+div {
+    color: red;
+    background-color: #F4E5CF;
+}
+&lt;/style&gt;
+
+&lt;div&gt;
+    Hello World !
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example" style="color:red; background-color: #F4E5CF;">
+            Hello World !
+        </div>
+    </div>
+</div>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="css-3"/>
+<p>Il y'a plusieurs façon d'implémenter du CSS dans un fichier HTML</p>
+
+<div>
+<div>Comme nous l'avons déjà vu, avec la balise &lt;style&gt; directement dans le code HTML.</div>
+<pre><code>&lt;style&gt;
+div {
+    text-align: center;
+    background-color: red;
+}
+
+span {
+    color: white;
+}
+&lt;/style&gt;
+</code></pre>
+</div>
+<div>
+<div>Ma solution préférée : placer le CSS dans un fichier CSS (extension en .css) puis l'importer dans le fichier HTML</div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    <span class="comment">&lt;!-- On créé l'import dans l'élément &lt;head&gt; du fichier HTML. --&gt;</span>
+    &lt;link href="chemin/vers/mon/fichier.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</div>
+<div>Et enfin, il est possible d'ajouter le CSS directement sur un élément avec l'attribut "style"</div>
+<pre><code>&lt;div style="color: red; font-weight: bold;"&gt;
+    Attention à ne pas en abuser ou ça peut vite devenir le bazar !
+&lt;/div&gt;
+</code></pre>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="css-4"/>
+<p>Maintenant admettons que nous avons le code HTML suivant :</p>
+<pre>&lt;div&gt;Je suis vert !&lt;/div&gt;
+&lt;div&gt;Je suis rouge !&lt;/div&gt;
+</code></pre>
+<p>Problème : comment appliquer un CSS différent aux éléments &lt;div&gt; ? La solution : les classes et les ids !</p>
+<p>L'attribut HTML "class" permet de créer une référence particulière à un ou plusieurs éléments. Il est possible d'attribuer des propriétés CSS directement à une classe</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;style&gt;
+<span class="comment">/* Pour se référer à une classe <u>dans le CSS</u>, on ajout un "." avant de la nommer */</span>
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+&lt;div class="green"&gt;Je suis vert !&lt;/div&gt;
+&lt;div class="red"&gt;Je suis rouge !&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example">
+            <div style="color:green">Je suis vert !</div>
+            <div style="color:red">Je suis rouge !</div>
+        </div>
+    </div>
+</div>
+<p>Un élément peut avoir plusieurs classes</p>
+<pre><code>&lt;div class="green bold purple-background"&gt;J'ai plusieurs classes&lt;/div&gt;
+</code></pre>
+<p>L'attribut "id" s'apparente à "class", à la différence qu'un certain id ne peut être attribué <span style="color:red">qu'à un seul élément de la page</span> et qu'un élément HTML <span style="color:red">ne peut avoir qu'un seul id</span>.</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;style&gt;
+.green {
+    color: green;
+}
+<span class="comment">/* Pour se référer à un id <u>dans le CSS</u>, on ajout un "#" avant de le nommer */</span>
+#red {
+    color: red;
+}
+&lt;/style&gt;
+&lt;div class="green"&gt;Je suis vert !&lt;/div&gt;
+&lt;div id="red"&gt;Je suis rouge !&lt;/div&gt;
+&lt;div class="green"&gt;Moi aussi je suis vert !&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example">
+            <div style="color:green">Je suis vert !</div>
+            <div style="color:red">Je suis rouge !</div>
+            <div style="color:green">Moi aussi je suis vert !</div>
+        </div>
+    </div>
+</div>
+<p>A noter : les classes et les ids peuvent également être utilisés par JavaScript !</p>
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="css-5"/>
+<p>Pour terminer avec le CSS, il est important de noter qu'un style appliqué à un élément se répercutera sur ses "enfants".</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;style&gt;
+.green {
+    color: green;
+}
+&lt;/style&gt;
+
+&lt;div class="green"&gt;
+    Je suis l'élément parent, et je suis vert !
+    &lt;div&gt;
+        Je suis l'élément enfant, je suis également vert !
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div class="example" style="color: green;">
+            Je suis l'élément parent, et je suis vert !
+            <div>
+                Je suis l'élément enfant, je suis également vert !
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr id="js-1">
+<div class="title">JavaScript</div>
+<p>JavaScript est un langage de programmation qui permet de créer du contenu mis à jour de façon dynamique, de contrôler le contenu multimédia, d'animer des images, et tout ce à quoi on peut penser.
+</p>
+<p>JavaScript =/= Java</p>
+<p>Enfin, pour la plupart des gens :</p>
+<img src="pic/deteste-js-comic.jpg" width="400px">
+<p>Javascript est bien moins simple à appréhender que HTML et CSS et est soumis à des règles de syntaxe plutôt strictes, nous ne l'aborderons pas en profondeur. Voici tout de même un petit exemple :</p>
+<div class="container-2">
+    <div class="grid-span-1">
+<pre><code>&lt;div id="my-div"&gt;
+    &lt;button onclick="changeBackgroundColor()"&gt;
+        Changer la couleur du fond
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var myDiv = document.querySelector("#my-div");
+    var swapColor = false;
+    function changeBackgroundColor() {
+        swapColor = !swapColor;
+        myDiv.style.backgroundColor = swapColor ? "yellow" : "pink";
+    }
+&lt;/script&gt;
+</code></pre>
+    </div>
+    <div class="grid-span-1">
+        <div id="my-div" class="example" style="background-color: pink;">
+            <button onclick="changeBackgroundColor()">
+            Changer la couleur du fond
+            </button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="title">HTML, CSS, JS en résumé :</div>
+<p>Une seule image suffit !</p>
+<img src="pic/html-css-js.jpg">
+<p><a href="./html-css-pratique.html">Passons à la pratique !</a></p>
+
+
+
+
+
+
+
+
+
+</body>
+<script>
+    var myDiv = document.querySelector("#my-div");
+    var swapColor = false;
+    function changeBackgroundColor() {
+        swapColor = !swapColor;
+        myDiv.style.backgroundColor = swapColor ? "yellow" : "pink";
+    }
+</script>
+</html>
