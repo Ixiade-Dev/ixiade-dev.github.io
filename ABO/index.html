@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABO</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Amaury</h1>
+            <div>
+                <img src="img/portrait.jpg" alt="">
+            </div>
+        </section>
+    </header>
+    <section class="container">
+        <div class="grid-span-1 video-div">
+            <div class="title">Robin Hood : Men in Tights</div>
+            <div class="video"><iframe src="https://www.youtube.com/embed/pc1am3KyYgA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="comment">Sacré Robin des Bois (en VF) par Mel Brooks.</div>
+        </div>
+        <div class="grid-span-1 form-div">
+            <div class="title">Formulaire</div>
+            <form action="">
+                <div>
+                    <label for="name-input"><b>Votre nom</b></label><br>
+                    <input type="text" name="form-name" id="name-input">
+                </div>
+                <div>
+                    <b>Avez vous aimé la vidéo ?</b><br>
+                    <label for="radio-yes">Oui
+                        <input type="radio" name="form-radio" id="radio-yes" value="yes">
+                    </label>
+                    <label for="radio-no">Non
+                        <input type="radio" name="form-radio" id="radio-no" value="no">
+                    </label>
+                </div>
+                <div>
+                    <label for="user-comment"><b>Dites nous en plus :</b></label><br>
+                    <textarea name="form-textarea" id="user-comment" rows="10"></textarea>
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <a href="https://fr.linkedin.com/in/amaury-bois-dev-python">Mon LinkedIn</a>
+    </footer>
+</body>
+<script src="js/script.js"></script>
+</html>

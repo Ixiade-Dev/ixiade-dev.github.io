@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGO</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Estelle</h1>
+            <div>
+                <img src="img/EGO_01.jpg">
+            </div>
+    </section>
+    </header>
+    <section class="container">
+        <div class="grid-span-1 video-div">
+        <div class="title">Musique du moment</div>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/8megZqfOR0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="comment">MPL, anciennement Ma pauvre Lucette, est un groupe de musique composé de cinq artistes d'origine grenobloise, fondé en 2021.</div>
+        </div>
+        <div class="grid-span-1 form-div">
+            <div class="title">Formulaire</div>
+            <!-- On place chaque parties du formulaire dans un élément div afin que ceux-ci apparaissent les uns sous les autres
+            autrement, ils apparaitraient les uns à côté des autres. -->
+            <form action="">
+                <div>
+                    <!-- <br> sert à revenir à la ligne, autrement le label serait à côté de l'input.
+                    L'attribut for de l'élément label fait référence à l'id de l'input concernée. A quoi ça sert ?
+                    Si l'utilisateur clique sur le label, l'input sera selectionné. -->
+                    <label for="name-input"><b>Votre nom</b></label><br>
+                    <!-- L'attribut name simplifie la récupération des données contenu dans le formulaire. -->
+                    <input type="text" name="form-name" id="name-input">
+                </div>
+                <div>
+                    <b>Avez vous aimé la vidéo ?</b><br>
+                    <label for="radio-yes">Oui
+                        <!-- Sur les input:radio, l'attribut name permet de déterminer à quel ensemble appartient l'input -->
+                        <input type="radio" name="form-radio" id="radio-yes" value="yes">
+                    </label>
+                    <label for="radio-no">Non
+                        <input type="radio" name="form-radio" id="radio-no" value="no">
+                    </label>
+                </div>
+                <div>
+                    <label for="user-comment"><b>Dites nous en plus :</b></label><br>
+                    <!-- Pour les longues réponses, on préfére utiliser un élément textarea à un élément input:text
+                    car textarea permet à l'utilisateur de revenir à la ligne. -->
+                    <textarea name="form-textarea" id="user-comment" rows="10"></textarea>
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <a href="https://www.linkedin.com/in/estellegollety/">
+                <img alt="Qries" src="img/linkedin.png"></a>
+        </div>
+    </footer>
+</body>
+</html>

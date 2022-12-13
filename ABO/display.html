@@ -1,0 +1,80 @@
+<style>
+    .parent {
+        background-color: pink;
+        padding: 20px;
+        width: 80%;
+        margin: 20px 0 20px 0;
+    }
+
+    .child {
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+    }
+
+    .block {
+        display: block;
+    }
+
+    .inline {
+        display: inline-block;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .none {
+        display: none;
+    }
+
+    .contents {
+        display: contents;
+    }
+</style>
+<h2>display: block; sur éléments enfants</h2>
+<div class="parent">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+</div>
+<hr>
+<h2>display: inline-block; sur éléments enfants</h2>
+<div class="parent">
+    <div class="child inline"></div>
+    <div class="child inline"></div>
+    <div class="child inline"></div>
+    <div class="child inline"></div>
+    <div class="child inline"></div>
+</div>
+<hr>
+<h2>display: flex; justify-content: space-evenly; sur élément parent</h2>
+<div class="parent flex">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+</div>
+<hr>
+<h2>display: none; sur élément parent</h2>
+<div class="parent none">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+</div>
+<hr>
+<h2>display: contents; sur élément parent</h2>
+<div class="parent contents">
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+    <div class="child"></div>
+</div>
