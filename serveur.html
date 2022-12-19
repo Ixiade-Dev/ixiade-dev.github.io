@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Serveur</title>
+    <link href="css/html-css.css" rel="stylesheet">
+</head>
+<body>
+    <H1>Formation Serveur</H1>
+    <ul>
+        <li><a href="#server-1">Se connecter au serveur</a></li>
+        <li><a href="#server-2">Installation des packages</a></li>
+        <li><a href="#server-3">Création de la base de donnée</a></li>
+        <li><a href="#server-4">Installation du programme</a></li>
+        <li><a href="#server-5">Installation et configuration de nginx</a></li>
+        <li><a href="#server-6">Installation et configuration de supervisor</a></li>
+        <li><a href="#server-7">Création du certificat SSL</a></li>
+        <li><a href="#server-8">Fin</a></li>
+
+    </ul>
+
+    <hr id="server-1">
+    <div class="title">Se connecter au serveur</div>
+    <p>Commençons par voir deux façons de se connecter à un serveur, la première, en SSH via un terminal :</p>
+    <div><i>terminal</i></div>
+<pre><code>ssh user@adresseIP -p XXXX</code></pre>
+    <p>Décryptons cette commande :
+        <ul>
+            <li>ssh : connexion via SSH</li>
+            <li>user : nom d'utilisateur</li>
+            <li>addressIP : adresse IP du serveur</li>
+            <li>-p XXXX : nous spécifions que nous nous connectons via le port XXXX</li>
+        </ul>
+    </p>
+    <p>Il vous sera ensuite demandé le mot de passe de l'utilisateur (rien n'apparaît lorsque vous le saisissez ? C'est normal !)</p>
+    <p><i>"Mais où est ce que je récupère ces valeur ?"</i></p>
+    <p>Ces informations vous sont fournis par le loueur du serveur. Il est fortement recommandé de ne pas conserver l'utilisateur et le port (22) par défaut pour se connecter en SSH, il est préférable d'en créer de nouveaux</p>
+    <p>Il est également possible de se connecter via un logiciel, cela ne donne pas d'accès aux commandes mais permet d'avoir un explorateur de fichier, ce qui peut simplifier certaines tâches. Faisons la démo avec FileZilla :</p>
+    <img src="pic/filezilla.PNG" style="width:600px;">
+    <p><ul>
+        <li>hôte : l'adresse IP du serveur précédé par le type de connexion (ftp://, sftp://...)</li>
+        <li>nom d'utilisateur : 🤔</li>
+        <li>mot de passe : 🤔</li>
+        <li>port : le port de connexion</li>
+    </ul></p>
+    
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-2"/>
+    <div class="title">Installation du programme</div>
+    <p>Ok maintenant vous devriez avoir ceci :</p>
+    <img src="pic/ubuntu-1.PNG" style="width:400px;">
+    <p>Nous allons <u>AVANT TOUTE CHOSE</u> mettre à jour les applications contenu sur notre serveur. C'est <u>TRÈS IMPORTANT</u> ! Installer une nouvelle application sans mettre à jour le système peut (si vous avez très peu de chance bien entendu) planter votre serveur.</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo apt-get update</code></pre>
+    <p><i>"sudo ? apt-get ?"</i></p>
+    <p>"super user do". Cela permet d'élever vos droits pour la commande que vous voulez saisir. Certaines commandes seront autrement refusées. "apt-get" est l'équivalent de "pip"</p>
+    <p>Installons maintenant les packages nécessaires pour notre application (répondez "oui"" partout):</p>
+    <pre><code>sudo apt-get install python3-pip python3-dev libpq-dev postgresql postgresql-contrib git tree</code></pre>
+    <p>Avant de passer à la suite, installons une petite librairie python que j'aime beaucoup !</p>
+    <pre><code>sudo pip install pipenv</code></pre>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-3"/>
+    <div class="title">Création de la base de donnée</div>
+    <p>Comme vous l'avez peut être vu, nous avons installé postgresql, il y'a une bonne raison à ça : le programme utilise une base de donnée !</p>
+    <p>Postgresql est installé mais aucune base n'est créé, connectons nous à postgres:</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo -u postgres psql</code></pre>
+    <p><i>"gné ?"</i></p>
+    <p>"super user do" "avec utilisateur 'postgres' (utilisateur par défaut de postgresql" "connexion à postgres".</p>
+    <p>Vous voilà connecter à la base de donnée, faisons un peu de SQL, commençons par configurer la base de donnée en UTF-8 :</p>
+    <div><i>psql</i></div>
+<pre><code>SET client_encoding TO 'utf8';</code></pre>
+    <p>On doit également donner un mot de passe à l'utilisateur "postgres" (c'est obligatoire vis à vis de l'application)</p>
+    <div><i>psql</i></div>
+<pre><code>ALTER ROLE postgres PASSWORD 'motdepasse';</code></pre>
+    <p>Maintenant créons la base de donnée :</p>
+    <div><i>psql</i></div>
+<pre><code>CREATE DATABASE nomdelabasededonnée;</code></pre>
+    <p>Vous pouvez à présent quitter PSQL en tapant :</p>
+    <div><i>psql</i></div>
+<pre><code>exit</code></pre>
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-4"/>
+    <div class="title">Installation du programme</div>
+    <p>Installons à présent l'application via git, on commence par initialiser git :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo git init</code></pre>
+    <p>Maintenant on pull le repository :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo git pull adressedurepo</code></pre>
+    <p>On saisit le nom d'utilisateur puis le mot de passe et notre application est installée ! Vous pouvez vérifier que tout y est avec :</p>
+    <div><i>terminal</i></div>
+<pre><code>tree -L 1</code></pre>
+    <p>On peut désormais créer notre environnement virtuel (pipenv installe automatiquement toutes les librairies contenues dans le fichier requirements.txt)</p>
+    <div><i>terminal</i></div>
+<pre><code>pipenv install</code></pre>
+    <p>Une application Django gère ses fichiers statiques (CSS, images etc.) d'une façon bien particulière, la commande suivante est nécessaire :</p>
+    <div><i>terminal</i></div>
+<pre><code>pipenv run python manage.py collectstatic</code></pre>
+    <p>Nous y sommes presque ! Avant dernière étape : remplir notre base de donnée avec les modèles créés dans l'application :</p>
+    <div><i>terminal</i></div>
+<pre><code>pipenv run python manage.py migrate</code></pre>
+    <p>Créons notre compte super utilisateur :</p>
+    <div><i>terminal</i></div>
+<pre><code>pipenv run python manage.py createsuperuser</code></pre>
+    <p>Et pour finir, vérifions que tout est ok en lançant notre application !</p>
+    <div><i>terminal</i></div>
+<pre><code>pipenv run python manage.py runserver</code></pre>
+    <p>Si aucun message d'erreur n'apparait, c'est gagné, votre application fonctionne ! (vous pouvez faire "Ctrl+C" pour quitter le process)</p>
+    <p><i>"Mais comment on fait pour la voir ?"</i></p>
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-5"/>
+    <div class="title">Installation et configuration de nginx</div>
+    <p>Vous ne pouvez évidemment pas vous connecter à votre application puisqu'elle fonctionne en local sur votre serveur. Il faut un pont entre les deux pour transférer les requêtes effectuées depuis l'adresse IP publique jusqu'à l'adresse IP privée. On s'agit d'un <b>serveur web</b> ou <b>serveur HTTP</b></p>
+    <p>Il en existe plusieurs (les plus connus étant Apache et Nginx). Nous utiliserons Nginx ! Commençons par l'installer :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo apt-get install nginx</code></pre>
+    <p>Essayez de vous connecter à l'adresse IP du serveur, voici ce que vous devriez voir :</p>
+    <img src="pic/nginx.PNG" style="width:600px;">
+    <p>Créons un fichier de configuration pour Nginx :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo touch /etc/nginx/sites-available/nomdelapplication</code></pre>
+    <p>Ensuite nous devons dire à Nginx de prendre en compte ce fichier de configuration en ajoutant un lien symbolique dans sites-enabled:</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo ln -s /etc/nginx/sites-available/nomdelapplication /etc/nginx/sites-enabled</code></pre>
+    <p>Attention ça devient technique ! Nous allons lier le trafic entrant à l'application Django. Celle-ci contient trois formats de fichiers différents :
+        <ul>
+            <li>les fichiers statiques</li>
+            <li>les fichiers médias</li>
+            <li>les fichiers dynamiques</li>
+        </ul>
+    </p>
+    <p>On demande les choses suivantes à Nginx :
+        <ul>
+            <li>si un fichier statique est demandé, affiche-le sans passer par l'application</li>
+            <li>si un fichier media est demandé, affiche-le sans passer par l'application</li>
+            <li>sinon, redirige le trafic vers l'application Django</li>
+        </ul>
+    </p>
+    <p>Lorsqu'un fichier est renvoyé, on dit qu'il est "servi" par le serveur. Par exemple : "servir les fichiers statiques".</p>
+    <p>Dans notre cas, nous avons installé une libraire (Whitenoise) qui nous permet d'être feignant avec les fichiers statiques, nous avons juste à gérer les médias et le reste.</p>
+    <p>Accédons à notre fichier de configuration :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo nano /etc/nginx/sites-available/nomdelapplication</code></pre>
+    <p>Entrez ensuite les données suivantes : (pour enregistrer et quitter le fichier, Ctrl+X et 2 fois Entrée)</p>
+    <div><i>nomdelapplication</i></div>
+<pre><code>server { server_name adresseIPduserveur;
+
+    location / {
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_redirect off;
+            proxy_pass http://127.0.0.1:8000;
+    }
+
+    location /media {
+            alias /home/ubuntu/media;
+    }
+}</code></pre>
+    <p><i>"Oulalah !"</i></p>
+    <p>Mais non ! Décryptons :
+        <ul>
+            <li>server_name : nom du serveur, celà peut être son adresse IP ou un nom de domaine</li>
+            <li>location / : si la requête ne concerne ni un fichier statique, ni un fichier média, elle sera servi selon les paramètres qui suivront</li>
+            <li>proxy_set_header : options nécessaires à l'utilisation de django (modifie les paramètres du header)</li>
+            <li>proxy_redirect : j'ai pas trouvé !</li>
+            <li>proxy_pass : nginx redirigera les requêtes entrantes vers l'adresse locale indiquées. Dans notre cas, 127.0.0.1:8000 est l'adresse par défaut d'un serveur Django !</li>
+            <li>location /media : si la requête concerne un fichier média...</li>
+            <li>alias : ...Nginx établira un lien avec ce dossier !</li>
+        </ul>
+    </p>
+    <p>On recharge Nginx :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo service nginx reload</code></pre>
+    <p>On relance notre serveur :</p>
+    <div><i>terminal</i></div>
+<pre><code>pipenv run python manage.py runserver</code></pre>
+    <p>On se connecte à l'adresse IP eeeeeet...</p>
+    <p><i>"Ça ne marche pas, j'ai une erreur 400..."</i></p>
+    <p>Ah oui... c'est parce que l'adresse IP du serveur n'a pas été configurée dans le paramètre ALLOWED_HOSTS de l'application Django.</p>
+    <p>Ce paramètre se trouve normalement dans le fichier de settings de l'application mais dans le cas présent, il se trouve dans le fichier environment.py. Ouvrez ce fichier puis ajouter l'adresse IP du serveur dans la liste "ALLOWED_HOSTS" !</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo nano environment.py</code></pre>
+    <p>Relancez le serveur, retournez sur le site et normalement, tout y est.</p>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-6"/>
+    <div class="title">Installation et configuration de supervisor</div>
+    <p>On a presque terminé : on va maintenant s'assurer qu'en cas de crash, notre serveur se relance bien automatiquement, pour ce, on va utiliser supervisor, installons le :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo apt-get install supervisor</code></pre>
+    <p>On créé ensuite le fichier de configuration pour notre application :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo nano /etc/supervisor/conf.d/nomdelapplication.conf</code></pre>
+    <p>Et entrez ceci :</p>
+    <div><i>nomdelapplication.conf</i></div>
+<pre><code>[program:nomdelapplication]
+command = pipenv run gunicorn nomdelapplication.wsgi:application
+user = utilisateurserveur
+directory = /home/ubuntu
+autostart = true
+autorestart = true</code></pre>
+    <p>Qu-est ce que ça raconte ?
+        <ul>
+            <li>command : la commande qui sera executée par supervisor</li>
+            <li>user : l'utilisateur pour qui supervisor se fera passer</li>
+            <li>directory : le dossier d'execution de la commande</li>
+            <li>autostart : permet à la commande de se lancer automatiquement</li>
+            <li>autorestart : permet à la commande de se relancer automatiquement</li>
+        </ul>
+    </p>
+    <p><i>"Guniquoi ?"</i></p>
+    <p>Gunicorn ! C'est un serveur HTTP Python pour Unix qui utilise les spécifications WSGI (Web Server Gateway Interface). En production, il n'est pas recommandé de lancer son serveur Django directement via la commande runserver (c'est fortement déconseillé par les développeur du framework). Il est préférable d'utiliser un outil plus puissant et plus performant. Gunicorn est l'un de ces outils.</p>
+    <p>Il est temps de dire à Supervisor de lancer les processus, on commence par lui faire contrôler nos fichiers de configuration :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo supervisorctl reread</code></pre>
+    <p>Puis on le remet à jour :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo supervisorctl update</code></pre>
+    <p>Enfin, on vérifie que le processus est bien lancé :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo supervisorctl status</code></pre>
+    <p>Si RUNNING apparait, vous pouvez retourner sur votre navigateur pour vérifier que l'application fonctionne bien !</p>
+    <div><i>autres commandes supervisor</i></div>
+<pre><code>sudo supervisorctl start nomdelapplication
+sudo supervisorctl stop nomdelapplication
+sudo supervisorctl restart nomdelapplication</code></pre>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-7"/>
+    <div class="title">Création du certificat SSL</div>
+    <p>Pour achever le travail, nous allons lier notre application à un nom de domaine et créer un certificat SSL. On doit commencer par modifier notre fichier de configuration nginx pour ajouter le nom de domaine :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo nano /etc/nginx/sites-available/nomdelapplication</code></pre>
+    <p>On modifie le paramètre server_name :</p>
+    <div><i>nomdelapplication</i></div>
+<pre><code>server { server_name adresseIPduserveur nomdedomaine.xx www.nomdedomaine.xx;
+
+    location / {
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_redirect off;
+            proxy_pass http://127.0.0.1:8000;
+    }
+
+    location /media {
+            alias /home/ubuntu/media;
+    }
+}</code></pre>
+    <p>On sauvegarde et on prépare directement la création du certificat SSL. Nous allons utiliser Certbot pour créer un certificat SSL gratuit, celui-ci doit être installé via la librairie snap (équivalent de pip) que nous devons installer au préalable :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo apt-get install snapd</code></pre>
+    <p>On s'assure ensuite que snap soit bien à jour :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo snap install core; sudo snap refresh core</code></pre>
+    <p>On vérifie qu'il n'y ai pas de version auto de Certbot déjà installée:</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo apt-get remove certbot</code></pre>
+    <p>On installe Certbot :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo snap install --classic certbot</code></pre>
+    <p>On lance la commande suivante afin de s'assurer que Certbot fonctionnera bien :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo ln -s /snap/bin/certbot /usr/bin/certbot</code></pre>
+    <p>On créé le certificat (pour une config nginx):</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo certbot --nginx</code></pre>
+    <p>Et c'est fini ! Votre certificat est créé. Il peut mettre un certain temps à être déployé ! Vous pouvez vérifier les paramètres ajoutés en vous rendant sur le fichier de config Nginx :</p>
+    <div><i>terminal</i></div>
+<pre><code>sudo nano /etc/nginx/sites-available/nomdelapplication</code></pre>
+    <p>Essayez de vous connecter à votre nom de domaine via https (il faudra peut être attendre quelques minutes)</p>
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="server-7"/>
+    <div class="title">Fin de la formation</div>
+    <p>Félicitation ! Vous avez déployé une application de A à Z et êtes plus à même de savoir comment agir en cas de problème !</p>
+</body>
+</html>
+
