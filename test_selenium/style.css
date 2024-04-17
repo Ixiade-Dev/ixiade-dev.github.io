@@ -20,6 +20,12 @@ header {
     padding: 20px;
 }
 
+footer {
+    background: blueviolet;
+    height: 50px;
+    width: 100%;
+}
+
 section {
     padding: 20px;
 }
