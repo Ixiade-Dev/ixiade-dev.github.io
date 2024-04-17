@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Selenium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2>Exercice 7 - Un peu de tout !</h2>
+        <p>Avec Selenium, cliquez sur le lien pour revenir à l'index (et testez que vous y êtes bien revenu). Le lien de retour n'apparaitra que si vous scrollez tout en bas de la page.</p>
+    <section>
+    <section class="spacer"></section>
+</body>
+<script src="script.js"></script>
+<script>
+    let i = 0;
+    let interval = setInterval(() => {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && i < 3) {
+            addSpacer();
+            i++;
+        }
+        if (i == 3) {
+            for (let j = 0; j < 200; j++) {
+                addLink();
+            }
+            const links = document.querySelectorAll("a");
+            const link = links[Math.floor(Math.random() * links.length)];
+            link.href = "selenium_index.html";
+            clearInterval(interval);
+        }
+    }, 500)
+</script>
+</html>

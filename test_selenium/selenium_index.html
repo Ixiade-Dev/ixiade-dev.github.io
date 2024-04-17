@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Selenium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Formation Selenium</h1>
+    </header>
+    <div style="background: chartreuse"></div>
+    <section>
+        <h2>Exercice 1 - Information du navigateur</h2>
+        <p>Avec Selenium, tester que le titre de la page est bien "Formation Selenium" et que l'url contient bien "index.html"</p>
+    </section>
+    <section>
+        <h2>Exercice 2 - Retrouver un élément et extraire son contenu</h2>
+        <p>Avec Selenium, tester que la div ci-dessous contient bien "Hello World !"</p>
+        <div class="flex">
+            <div id="ex2-div">Hello World !</div>
+        </div>
+    </section>
+    <section>
+        <h2>Exercice 3 - Cliquer sur un bouton</h2>
+        <p>Avec Selenium, cliquez sur le bouton ci-dessous et vérifiez que le texte de la div voisine (en jaune) devient bien "Vous avez cliqué sur le bouton !"</p>
+        <div class="flex">
+            <button id="ex3-btn" onclick="ex3BtnClick()">Cliquez ici !</button>
+            <div id="ex3-div"></div>
+        </div>
+    </section>
+    <section>
+        <h2>Exercice 4 - Saisir du texte</h2>
+        <p>Avec Selenium, saisissez "Hello World" dans l'input ci-dessous, soumettez le formulaire puis testez que le texte de la div voisine (en jaune) devient bien "Hello World". Attention, ce test simule un latence serveur (environ 1.5s) !</p>
+        <div class="flex">
+            <form onsubmit="ex4InputSubmit(event)">
+                <input type="text" id="ex4-input">
+            </form>
+            <div id="ex4-div"></div>
+        </div>
+    </section>
+    <section>
+        <h2>Exercice 5 - Xpath</h2>
+        <p>Avec Selenium, retrouvez l'élément contenant "Hello World" et testez son contenu</p>
+        <div class="flex">
+            <div>
+                <div id="ex5-div">
+                    <div>
+                        <ul class="ex5">
+                            <li>Lorem ipsum</li>
+                            <li>Lorem ipsum</li>
+                        </ul>
+                        <ul>
+                            <li class="ex5">Hello World !</li>
+                            <li>Lorem ipsum</li>
+                        </ul>
+                        <div class="ex5">
+                            <li class="ex5">Lorem ipsum</li>
+                        </div>
+                        <li class="ex5">Lorem ipsum</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <section>
+        <h2>Exercice 6 - Xpath ++ et script</h2>
+        <p>Avec Selenium, cliquez sur la boite verte et testez que vous avez bien navigué sur une autre page</p>
+        <div class="flex">
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+            <div class="ex6-box"></div>
+        </div>
+    </section>
+
+</body>
+<script src="script.js"></script>
+<script>
+    const ex6Boxes = document.getElementsByClassName('ex6-box');
+    const ex6Number = Math.floor(Math.random() * ex6Boxes.length);
+
+    window.onload = function() {
+        generateFakeClass();
+        changeBoxBackground(ex6Number);
+    }
+
+    ex6Boxes[ex6Number].addEventListener('click', function() {
+        window.location.href = 'selenium_page2.html';
+    });
+</script>
+</html>

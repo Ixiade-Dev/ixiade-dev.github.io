@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Selenium</title>
+    <link href="css/html-css.css" rel="stylesheet">
+</head>
+<style>
+    html {
+        font-family: "Roboto", sans-serif;
+    }
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    li b {
+        color: yellow;
+    }
+    .flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .flex img {
+        width: 10rem;
+    }
+</style>
+<body>
+    <H1>Formation Selenium</H1>
+    <ul>
+        <li><a href="#selenium-1">A quoi sert Selenium ?</a></li>
+        <li><a href="#selenium-2">Qu'est ce qu'un webdriver ?</a></li>
+        <li><a href="#selenium-3">Les options du webdriver</a></li>
+        <li><a href="#selenium-4">Les propriétés du webdriver</a></li>
+        <li><a href="#selenium-5">Retrouver des webElements</a></li>
+        <li><a href="#selenium-6">Créer des tests avec selenium</a></li>
+        <li><a href="#selenium-7">La suite ?</a></li>
+    </ul>
+
+    <hr id="selenium-1">
+    <div class="title">A quoi sert Selenium ?</div>
+    <p>
+        Selenium est une suite d'outils de test logiciel open source pour les applications web. Elle permet aux développeurs et aux testeurs d'automatiser les interactions avec les navigateurs web sur plusieurs plateformes. Selenium est largement utilisé pour les tests d'intégration et d'acceptation, c'est-à-dire pour simuler des interactions utilisateur dans un navigateur web pour vérifier que l'application web fonctionne comme prévu. Selenium peut également être utilisé pour le scrapping.
+    </p>
+        <ul>
+            <li><b>Automatisation des tests</b> : Selenium permet d'automatiser les tests de l'interface utilisateur des applications web, réduisant ainsi le temps et les coûts associés aux tests manuels.</li>
+            <li><b>Scrapping</b> : Selenium permet de contourner de nombreux dispositifs anti-scrapping</li>
+            <li><b>Compatibilité multi-navigateurs</b> : Il supporte plusieurs navigateurs, tels que Chrome, Firefox, Internet Explorer, et Safari, ce qui permet de tester l'application sur différents navigateurs pour assurer sa compatibilité.</li>
+            <li><b>Tests dans divers systèmes d'exploitation</b> : Compatible avec des systèmes d'exploitation comme Windows, macOS, et Linux.</li>
+            <li><b>Intégration avec des outils de CI/CD</b> : Il peut être intégré dans les pipelines de déploiement continu et d'intégration continue (CI/CD), permettant d'effectuer des tests automatiquement lors de chaque déploiement ou mise à jour de l'application.</li>
+            <li><b>Langages de programmation supportés</b> : Selenium propose des bindings pour plusieurs langages de programmation, y compris Java, C#, Python, Ruby, et JavaScript, offrant ainsi une grande flexibilité aux développeurs.</li>
+        </ul>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="selenium-2"/>
+    <div class="title">Qu'est ce qu'un webdriver ?</div>
+    <p>Un webdriver est une interface dans Selenium qui fournit un moyen programmatique d'interagir avec les éléments d'une page web. C'est une composante clé de Selenium WebDriver, qui est une des parties de la suite Selenium. WebDriver utilise des navigateurs et leurs moteurs natifs pour interagir avec les applications web, ce qui rend les tests plus rapides et plus précis par rapport aux autres outils qui simulent les navigateurs.</p>
+        <ul>
+            <li><b>Communication directe avec le navigateur</b> : Un webdriver interagit directement avec le navigateur en utilisant son propre moteur, sans passer par des intermédiaires JavaScript. Cela lui permet de contrôler le navigateur et d'émuler le comportement de l'utilisateur de manière plus réaliste.</li>
+            <li><b>Support des actions complexes</b> : Il peut gérer des actions utilisateur complexes comme le glisser-déposer, la saisie de texte, les clics, et la navigation.</li>
+            <li><b>Indépendance du langage</b> : Comme un webdriver supporte plusieurs langages de programmation, il peut être utilisé dans divers contextes de développement.</li>
+            <li><b>Interaction au niveau du système</b> : À la différence de certains outils qui fonctionnent uniquement dans le contexte de la page web, le webdriver peut interagir avec les pop-ups au niveau du système d'exploitation, comme les alertes, les boîtes de dialogue d'authentification, et les téléchargements de fichiers.</li>
+        </ul>
+    <p>Il existe plusieurs implémentations de webdrivers pour différents navigateurs, comme ChromeDriver pour Google Chrome, GeckoDriver pour Firefox, et SafariDriver pour Safari.</p>
+    <p>Voici le code pour créer un webdriver simple :</p>
+<pre><code># Nécessite les librairies selenium et webdriver_manager
+# Nous utilisons Chrome dans cet exemple
+
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(
+    service=ChromeService(
+        ChromeDriverManager().install()
+    )
+)</code></pre>
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="selenium-3"/>
+    <div class="title">Les options du webdriver</div>
+    <p>Quand vous créez votre webdriver, vous pouvez modifier ses options par défaut afin de répondre à vos besoins.</p>
+    <p>Voici comment configurer ces options :</p>
+<pre><code># ici, nous utiliserons Chrome
+options = webdriver.ChromeOptions()
+options.add_argument(argument)</code></pre>
+    <p>Voici une liste des arguments et leur utilité</p>
+        <ul>
+            <li><b>--headless</b> : Lance Chrome en mode headless (sans interface visuelle)</li>
+            <li><b>--disable-gpu</b> : Désactive l'accélération matérielle, nécessaire dans certains cas pour le mode headless</li>
+            <li><b>--window-size=1920x1080</b> : Définit la taille de la fenêtre de Chrome</li>
+            <li><b>--no-sandbox</b> : Désactive le sandbox de Chrome pour les environnements où les politiques de sécurité l'exigent, comme dans certains conteneurs Docker.</li>
+            <li><b>--disable-extensions</b> : Désactive toutes les extensions Chrome installées.</li>
+            <li><b>--disable-popup-blocking</b> : Désactive le blocage des pop-ups.</li>
+            <li><b>--ignore-certificate-errors</b> : Ignore les erreurs de certificat SSL/TLS, utile pour le test de sites avec des certificats auto-signés.</li>
+            <li><b>--start-maximized</b> : Lance Chrome maximisé, utile pour certaines conditions de test.</li>
+            <li><b>--incognito</b> : Lance Chrome en mode incognito.</li>
+            <li><b>--disable-infobars</b> : Désactive les barres d'information qui peuvent apparaître en haut du navigateur.</li>
+            <li><b>--user-data-dir=path</b> : Spécifie le répertoire de données utilisateur de Chrome, permettant la personnalisation et la persistance des données de session.</li>
+            <li><b>--disable-dev-shm-usage</b> : Empêche Chrome d'utiliser /dev/shm pour le stockage temporaire, réduisant les problèmes sur les systèmes avec peu de mémoire partagée.</li>
+            <li><b>--remote-debugging-port=9222</b> : Ouvre un port pour le débogage à distance, permettant des inspections plus poussées lors des tests.</li>
+        </ul>
+    <p>Il existe également d'autres propriétés pour des cas plus spécifique, nous n'entrerons pas dans les détails.</p>
+<pre><code>add_experimental_option(name, value):
+# Permet de définir des options expérimentales spécifiques.
+
+add_extension(path):
+# Ajoute une extension Chrome à partir d'un fichier.
+
+add_encoded_extension(encoded_extension):
+# Ajoute une extension Chrome sous forme encodée en base64.
+
+binary_location = path:
+# Définit l'emplacement du fichier binaire de Chrome.
+
+to_capabilities():
+# Retourne les capacités du ChromeOptions configuré comme un objet que vous pouvez ensuite passer au WebDriver.
+
+set_headless(headless=True):
+# Configure Chrome pour fonctionner en mode headless (peut être déprécié).</code></pre>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="selenium-4"/>
+    <div class="title">Les propriétés et méthodes du webdriver</div>
+    <p>Voici la liste des propriétés liés à un webdriver (Chrome)</p>
+    <ul>
+        <li><b>current_url</b> : Retourne l'URL de la page web actuellement chargée dans le navigateur.</li>
+        <li><b>title</b> : Retourne le titre de la page web actuelle.</li>
+        <li><b>page_source</b> : Retourne le code source complet de la page web actuelle.</li>
+        <li><b>current_window_handle</b> : Retourne l'identifiant de la fenêtre actuellement active.</li>
+        <li><b>window_handles</b> : Retourne une liste de tous les identifiants de fenêtre ouverts par la session du navigateur.</li>
+        <li><b>desired_capabilities</b> : Retourne les capacités désirées du navigateur actuel. Cela peut inclure les configurations et options spécifiées au lancement du WebDriver.</li>
+        <li><b>session_id</b> : Retourne l'identifiant de session unique pour la session WebDriver actuelle.</li>
+        <li><b>name</b> : Retourne le nom du navigateur actuellement contrôlé par le driver (dans ce cas, il retournerait `chrome`).</li>
+    </ul>
+    <p>Maintenant, voici la liste des méthodes liés à un webdriver (Chrome)</p>
+    <ul>
+        <li><b>get(url)</b> : Charge une nouvelle page web à l'URL spécifiée.</li>
+        <li><b>find_element(by, value)</b> : Trouve le premier élément dans la page actuelle qui correspond au critère spécifié.</li>
+        <li><b>find_elements(by, value)</b> : Trouve tous les éléments dans la page actuelle qui correspondent au critère spécifié.</li>
+        <li><b>back()</b> : Commande le navigateur à retourner à la page précédente.</li>
+        <li><b>forward()</b> : Commande le navigateur à avancer vers la page suivante.</li>
+        <li><b>refresh()</b> : Rafraîchit la page actuelle.</li>
+        <li><b>close()</b> : Ferme la fenêtre du navigateur actuelle.</li>
+        <li><b>quit()</b> : Quitte le navigateur et termine la session WebDriver en cours.</li>
+        <li><b>execute_script(script, *args)</b> : Exécute un script JavaScript dans le contexte de la page actuelle.</li>
+        <li><b>switch_to.window(window_name)</b> : Change le contexte actuel vers une autre fenêtre ou onglet spécifié.</li>
+        <li><b>get_screenshot_as_file(filename)</b> : Enregistre une capture d'écran de la page actuelle dans un fichier spécifié.</li>
+        <li><b>set_window_size(width, height)</b> : Définit la taille de la fenêtre du navigateur.</li>
+        <li><b>get_cookies()</b> : Retourne tous les cookies de la session actuelle.</li>
+        <li><b>add_cookie(cookie_dict)</b> : Ajoute un cookie spécifié à votre session actuelle.</li>
+        <li><b>delete_all_cookies()</b> : Supprime tous les cookies de la session actuelle.</li>
+        <li><b>implicitly_wait(time_to_wait)</b> : Définit le délai d'attente implicite pour toutes les tentatives de localisation d'éléments.</li>
+    </ul>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="selenium-5"/>
+    <div class="title">Retrouver des webElements</div>
+    <p>Nous avons vu précédemment les méthodes find_element et find_elements, nous allons d'abord détailler leurs arguments puis nous verrons comment les utiliser en pratique</p>
+    <p>by correspond à un attribut HTML affecté à l'élément recherché, et value à la valeur de cet attribut, par exemple si nous voulons retrouver la div possédant l'id "ixiade" :</p>
+<pre><code>from selenium.webdriver.common.by import By
+
+element = driver.find_element(By.ID, "ixiade")</code></pre>
+    <p>Voici une liste des valeurs possible de by :</p>
+    <ul>
+        <li><b>By.ID</b> : Recherche un élément par son identifiant unique (attribut "id").</li>
+        <li><b>By.XPATH</b> : Recherche un élément en utilisant une expression XPath (nous détaillerons un peu plus bas)</li>
+        <li><b>By.LINK_TEXT</b> : Recherche un élément qui est un lien (tag &lt;a&gt;) en utilisant le texte complet du lien.</li>
+        <li><b>By.PARTIAL_LINK_TEXT</b> : Recherche un élément qui est un lien en utilisant une partie du texte du lien.</li>
+        <li><b>By.NAME</b> : Recherche un élément par son nom (attribut "name").</li>
+        <li><b>By.TAG_NAME</b> : Recherche un élément par le nom de sa balise.</li>
+        <li><b>By.CLASS_NAME</b> : Recherche un élément par son ou ses noms de classe (attribut "class").</li>
+        <li><b>By.CSS_SELECTOR</b> : Recherche un élément en utilisant un sélecteur CSS.</li>
+    </ul>
+
+    <p>La variable <b>element</b> créée est un <b>WebElement</b> qui posséde les propriétés et méthodes suivantes :</p>
+    <ul><b><u>Propriétés</u></b>
+        <li><b>tag_name</b> : Retourne le nom de la balise de cet élément.</li>
+        <li><b>text</b> : Retourne le texte visible de cet élément et de ses enfants.</li>
+    </ul>
+    <ul><b><u>Méthodes</u></b>
+        <li><b>click()</b> : Clique sur l'élément.</li>
+        <li><b>submit()</b> : Soumet un formulaire à partir de cet élément.</li>
+        <li><b>clear()</b> : Efface le texte si c'est un élément de formulaire de type texte.</li>
+        <li><b>get_attribute(name)</b> : Retourne la valeur de l'attribut spécifié.</li>
+        <li><b>is_displayed()</b> : Retourne True si l'élément est visible à l'utilisateur.</li>
+        <li><b>is_enabled()</b> : Retourne True si l'élément est activé.</li>
+        <li><b>is_selected()</b> : Vérifie si un élément (par exemple, une option d'un select) est sélectionné.</li>
+        <li><b>send_keys(*value)</b> : Envoie des touches ou des séquences de touches à un élément d'entrée.</li>
+        <li><b>screenshot(filename)</b> : Prend une capture d'écran de l'élément et la sauvegarde en tant que fichier image.</li>
+        <li><b>location</b> : Retourne un dictionnaire avec les coordonnées x et y de l'élément dans la page.</li>
+        <li><b>size</b> : Retourne un dictionnaire contenant la largeur et la hauteur de l'élément.</li>
+        <li><b>rect</b> : Retourne un dictionnaire avec les clés 'x', 'y', 'height' et 'width', décrivant le rectangle englobant de l'élément.</li>
+        <li><b>value_of_css_property(property_name)</b> : Retourne la valeur de la propriété CSS spécifiée pour cet élément.</li>
+        <li><b>parent</b> : Retourne le WebDriver attaché à cet élément.</li>
+        <li><b>id</b> : Retourne l'identifiant interne de l'élément utilisé par WebDriver.</li>
+        <li><b>find_element(by, value)</b> : Trouve le premier élément dans l'élément actuel qui correspond au critère spécifié.</li>
+        <li><b>find_elements(by, value)</b> : Trouve tous les éléments dans l'élément actuel qui correspondent au critère spécifié.</li>
+    </ul>
+
+    <p>Parlons un peu des XPath: XPath, qui signifie XML Path Language, est un langage de requête utilisé pour sélectionner des nœuds dans des documents XML. En raison de sa flexibilité et de sa puissance, XPath est également largement utilisé dans les technologies web pour naviguer dans les structures DOM (Document Object Model) des pages HTML, notamment dans le cadre des tests automatisés avec des outils comme Selenium WebDriver.</p>
+    <ul>
+        <li><b>Sélection précise de nœuds</b> : XPath permet de sélectionner des nœuds dans un document XML ou HTML de manière très précise. Vous pouvez choisir des éléments par noms de balises, attributs, relations hiérarchiques (parent/enfant), et plus encore.</li>
+        <li><b>Expressions conditionnelles</b> : XPath supporte l'utilisation de conditions pour affiner les sélections de nœuds, par exemple, choisir des éléments en fonction de la valeur de leurs attributs ou de leur contenu textuel.</li>
+        <li><b>Fonctions intégrées</b> : XPath comprend de nombreuses fonctions pour manipuler des chaînes de caractères, des nombres, et des séquences de nœuds, ce qui permet d'effectuer des recherches complexes et des calculs directement dans la requête XPath.</li>
+        <li><b>Navigation flexible</b> : Vous pouvez naviguer dans toutes les directions à travers la structure du document — sélectionnant des parents, des enfants, des frères et sœurs, etc., rendant XPath extrêmement utile pour les documents complexes.</li>
+    </ul>
+
+    <p>Voici quelques exemples :</p>
+<pre><code>//p</code></pre>
+    <p>Sélectionne tous les éléments &lt;p&gt; de la page.</p>
+    <br>
+<pre><code>//div[@id='content']</code></pre>
+    <p>Sélectionne l'élément &lt;div&gt; avec l'attribut id égal à 'content'.</p>
+    <br>
+<pre><code>//a[contains(@href, 'example.com')]</code></pre>
+    <p>Sélectionne tous les éléments &lt;a&gt; dont l'attribut href contient 'example.com'.</p>
+    <br>
+<pre><code>/html/body/div[2]/div[1]/p</code></pre>
+    <p>Cela sélectionne le premier paragraphe (&lt;p&gt;) dans la première div de la deuxième div enfant du &lt;body&gt; dans le document HTML.</p>
+
+<pre><code>//div[@id='content' and @class='main']</code></pre>
+    <p>Sélectionne l'élément &lt;div&gt; avec l'attribut id égal à 'content' et l'attribut class égal à 'main'.</p>
+
+    <hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="selenium-6"/>
+    <div class="title">Créer des tests avec selenium</div>
+    <p>Pour faire des tests, nous utiliserons la librairie pytest. Afin que pytest retrouve tout les tests de votre projet, vous devez :</p>
+        <div class="flex">
+            <ul>
+                <li>Nommer les fichiers contenant les tests avec le préfixe <b>test_</b></li>
+                <li>Nommer les classes de test avec le préfixe <b>Test</b></li>
+                <li>Nommer les fonctions de test avec le préfixe <b>test_</b></li>
+            </ul>
+            <img src="pic/glados_test.PNG" title="beaucoup de fois le mot 'test'">
+        </div>
+
+    <p>Afin d'éviter d'éventuelle erreurs, ne mettez jamais ces préfixes sur des fichiers/classes/fonctions non-liées aux tests</p>
+    <p>Voici une structure de test simple (dans un contexte python natif, avec django c'est différent):</p>
+<pre><code>class TestExample:
+    @classmethod
+    def setup_class(cls):
+        cls.shared_value = 42
+
+    def setup_method(self, method):
+        self.example_value = 100
+
+    def test_first(self):
+        assert self.example_value == 100
+        assert self.shared_value == 42
+
+    def test_second(self):
+        assert self.example_value == 100
+        assert self.shared_value == 42
+
+    @classmethod
+    def teardown_class(cls):
+        print("Nettoyage des ressources après les tests de la classe.")
+
+    def teardown_method(self, method):
+        print("Nettoyage après chaque test.")</code></pre>
+
+    <ul>
+        <li><b>setup_class(cls)</b> : Cette méthode est appelée une fois pour la classe, avant tous les autres tests. Elle est utile pour initialiser des ressources qui sont coûteuses à créer et peuvent être partagées par tous les tests de la classe.</li>
+        <li><b>setup_method(self, method)</b> : Elle est appelée avant chaque méthode de test. C'est ici que vous pouvez initialiser des valeurs qui doivent être réinitialisées avant chaque test.</li>
+        <li><b>teardown_class(cls)</b> : Appelée après tous les tests de la classe pour nettoyer les ressources de classe.</li>
+        <li><b>teardown_method(self, method)</b> : Appelée après chaque test pour faire le nettoyage spécifique à chaque test.</li>
+    </ul>
+
+    <p>A noter que les tests ne seront pas forcément executé dans l'ordre dans lequel vous les avez codé. Dans l'idéal, mieux vaut que l'ordre des tests reste aléatoire, mais pour des tests d'intégrations, définir un ordre peut permettre de gagner du temps. Voici comment faire avec la librairie <b>pytest-order</b> :</p>
+<pre><code>import pytest
+
+class TestSequence:
+    @pytest.mark.order(2)
+    def test_second(self):
+        print("Exécuté en deuxième")
+        assert True
+
+    @pytest.mark.order(1)
+    def test_first(self):
+        print("Exécuté en premier")
+        assert True
+
+    @pytest.mark.order(3)
+    def test_third(self):
+        print("Exécuté en troisième")
+        assert True</code></pre>
+
+    <p>Puis lancer vos tests tout simplement avec la commande :</p>
+<pre><code>pytest</code></pre>
+
+<hr style="border-top: dashed 1px; border-color: rgb(68, 68, 68);" id="selenium-7"/>
+<div class="title">La suite ?</div>
+<p>Il existe de nombreuses autres fonctionnalités et concepts à explorer dans Selenium, comme les actions utilisateur avancées, les tests multi-navigateurs, les tests parallèles, les tests de performance, et bien plus encore. Mais ce n'est pas utile pour ce qui vous attend !</p>
+<p>Préparons un petit projet :</p>
+<ul>
+    <li>Ouvrez un nouveau dossier sur votre IDE (VSCode)</li>
+    <li>
+<pre><code>pipenv install selenium webdriver-manager pytest pytest-order</code></pre>
+    </li>
+    <li>(Là, j'interviens pour régler les 15000 problèmes d'installation de librairie que nous avons à chaque fois)</li>
+    <li>Créez un fichier <b>test_selenium.py</b> avec le contenu suivant :</li>
+<pre><code>import time
+
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+
+
+DRIVER_ARGUMENTS = []
+URL = ""
+
+
+class TestIntegration:
+    @classmethod
+    def setup_class(cls):
+        options = webdriver.ChromeOptions()
+        for arg in DRIVER_ARGUMENTS:
+            options.add_argument(arg)
+        cls.driver = webdriver.Chrome(
+            service=ChromeService(
+                ChromeDriverManager().install()
+            )
+        )
+        cls.driver.get(URL)
+
+    # VOS TESTS IRONT ICI
+
+    @classmethod
+    def teardown_class(cls):
+        cls.driver.quit()</code></pre>
+</ul>
+<p>Puis pour finir, cliquez <a href="test_selenium/selenium_index.html" target="_blank">ici</a> !</p>
+</body>
+</html>
