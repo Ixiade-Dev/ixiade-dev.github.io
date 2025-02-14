@@ -1,0 +1,63 @@
+/* screen - usbc */
+
+.usbc {
+  align-items: flex-start;
+  display: flex;
+  overflow: hidden;
+  width: 866px;
+}
+
+.usbc .usb-c {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 50px;
+  display: flex;
+  gap: 37px;
+  height: 387px;
+  margin-left: 940px;
+  margin-top: -990px;
+  overflow: hidden;
+  width: 866px;
+}
+
+.usbc .flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 325px;
+  width: 581px;
+}
+
+.usbc .fichier-24x-1 {
+  height: 133px;
+  width: 164px;
+}
+
+.usbc .overlap-group {
+  align-items: flex-start;
+  align-self: flex-end;
+  background-color: var(--elephant);
+  border-radius: 39px;
+  display: flex;
+  height: 192px;
+  min-width: 511px;
+  padding: 22px 10px;
+}
+
+.usbc .la-prise-usb-type-c {
+  color: var(--white);
+  font-family: var(--font-family-gallant_rounded-regular);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 30px;
+  min-height: 144px;
+  text-align: center;
+  width: 491px;
+}
+
+.usbc .calque_1 {
+  height: 140px;
+  margin-top: 53px;
+  width: 191px;
+}

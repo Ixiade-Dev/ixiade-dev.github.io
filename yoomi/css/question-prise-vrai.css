@@ -1,0 +1,130 @@
+/* screen - question-prise-vrai */
+
+.question-prise-vrai {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  overflow: hidden;
+  width: 1280px;
+}
+
+.question-prise-vrai .overlap-group {
+  height: 696px;
+  margin-left: 53px;
+  margin-top: 52px;
+  position: relative;
+  width: 1415px;
+}
+
+.question-prise-vrai .rectangle-2 {
+  background-color: var(--elephant);
+  border-radius: 76px;
+  height: 696px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1173px;
+}
+
+.question-prise-vrai .rectangle-5 {
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  height: 106px;
+  left: 184px;
+  position: absolute;
+  top: 464px;
+  width: 226px;
+}
+
+.question-prise-vrai .rectangle-23 {
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  height: 106px;
+  left: 473px;
+  position: absolute;
+  top: 464px;
+  width: 226px;
+}
+
+.question-prise-vrai .rectangle-24 {
+  background-color: var(--mantis);
+  border-radius: 39px;
+  height: 106px;
+  left: 762px;
+  position: absolute;
+  top: 464px;
+  width: 226px;
+}
+
+.question-prise-vrai .usb-a {
+  left: 236px;
+  width: 122px;
+}
+
+.question-prise-vrai .lightning {
+  left: 500px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 493px;
+  width: 172px;
+}
+
+.question-prise-vrai .usb-c {
+  left: 809px;
+  width: 132px;
+}
+
+.question-prise-vrai .title {
+  left: 477px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 115px;
+}
+
+.question-prise-vrai .fichier-3 {
+  cursor: pointer;
+  height: 52px;
+  left: 1035px;
+  position: absolute;
+  top: 600px;
+  width: 76px;
+}
+
+.question-prise-vrai .rectangle-25 {
+  background-color: var(--loblolly);
+  border-radius: 21px;
+  height: 106px;
+  left: 64px;
+  position: absolute;
+  top: 107px;
+  width: 368px;
+}
+
+.question-prise-vrai .bravo-tu-as-bien-c {
+  left: 106px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 126px;
+  width: 285px;
+}
+
+.question-prise-vrai .fichier-24x-5 {
+  height: 77px;
+  left: 37px;
+  object-fit: cover;
+  position: absolute;
+  top: 57px;
+  width: 78px;
+}
+
+.question-prise-vrai .usb {
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 494px;
+}

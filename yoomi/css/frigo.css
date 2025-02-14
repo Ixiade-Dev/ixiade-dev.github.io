@@ -1,0 +1,33 @@
+/* screen - frigo */
+
+.frigo {
+  align-items: flex-start;
+  display: flex;
+  height: 228px;
+  min-width: 335px;
+}
+
+.frigo .overlap-group {
+  height: 252px;
+  position: relative;
+  width: 335px;
+}
+
+.frigo .x-ky-permet-de-conna {
+  left: 57px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 103px;
+  width: 273px;
+}
+
+.frigo .signe-de-la-croix-1 {
+  height: 23px;
+  left: 287px;
+  object-fit: cover;
+  position: absolute;
+  top: 73px;
+  width: 23px;
+}

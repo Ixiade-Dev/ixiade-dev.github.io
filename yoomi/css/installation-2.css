@@ -1,0 +1,172 @@
+/* screen - installation-2 */
+
+.installation-2 {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  padding: 0 53px;
+  width: 1280px;
+}
+
+.installation-2 .overlap-group-container {
+  align-items: flex-end;
+  background-color: var(--elephant);
+  border-radius: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 52px;
+  min-height: 696px;
+  padding: 23px 38px;
+  width: 1173px;
+}
+
+.installation-2 .overlap-group2 {
+  height: 601px;
+  position: relative;
+  width: 1065px;
+}
+
+.installation-2 .ordi-config2 {
+  height: 487px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 114px;
+  width: 447px;
+}
+
+.installation-2 .x12-removebg-preview-1 {
+  height: 273px;
+  left: 829px;
+  object-fit: cover;
+  position: absolute;
+  top: 85px;
+  width: 158px;
+}
+
+.installation-2 .rectangle-25 {
+  background-color: var(--black);
+  height: 5px;
+  left: 44px;
+  position: absolute;
+  top: 480px;
+  transform: rotate(30.00deg);
+  width: 10px;
+}
+
+.installation-2 .vector-1 {
+  height: 279px;
+  left: 46px;
+  position: absolute;
+  top: 319px;
+  width: 873px;
+}
+
+.installation-2 .component-2 {
+  align-items: flex-start;
+  background-color: var(--loblolly);
+  border-radius: 46px;
+  box-shadow: inset 0px 4px 4px #00000078;
+  display: flex;
+  height: 92px;
+  left: 189px;
+  min-width: 92px;
+  padding: 8px 23px;
+  position: absolute;
+  top: 312px;
+}
+
+.installation-2 .x1 {
+  color: var(--black);
+  font-family: var(--font-family-gallant_rounded-regular);
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 68px;
+  text-align: center;
+  text-shadow: 0px 4px 4px #00000078;
+  white-space: nowrap;
+  width: 39px;
+}
+
+.installation-2 .rectangle-6 {
+  background-color: #c9f6b6;
+  border-radius: 39px;
+  height: 182px;
+  left: 602px;
+  position: absolute;
+  top: 416px;
+  width: 463px;
+}
+
+.installation-2 .avec-un-cble-usb-c {
+  color: var(--elephant);
+  font-family: var(--font-family-gallant_rounded-regular);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  left: 628px;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  text-align: center;
+  top: 470px;
+  width: 411px;
+}
+
+.installation-2 .mascotte-yooni-vert-fonce-1 {
+  height: 71px;
+  left: 602px;
+  object-fit: cover;
+  position: absolute;
+  top: 404px;
+  width: 77px;
+}
+
+.installation-2 .rcupre-les-donnes {
+  left: 149px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 737px;
+}
+
+.installation-2 .overlap-group1 {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--alto);
+  border-radius: 80px;
+  display: flex;
+  margin-right: 1.0px;
+  min-width: 858px;
+}
+
+.installation-2 .overlap-group3 {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 80px;
+  display: flex;
+  min-width: 328px;
+  padding: 0 134px;
+}
+
+.installation-2 .line-6 {
+  margin-left: 105px;
+}
+
+.installation-2 .line-7 {
+  margin-left: 246px;
+}
+
+.installation-2 .line-8 {
+  margin-left: 131px;
+}
+
+.installation-2 .line {
+  height: 17px;
+  width: 4px;
+}

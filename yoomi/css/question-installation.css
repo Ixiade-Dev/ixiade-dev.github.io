@@ -1,0 +1,129 @@
+/* screen - question-installation */
+
+.question-installation {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  overflow: hidden;
+  width: 1280px;
+}
+
+.question-installation .overlap-group3 {
+  height: 696px;
+  margin-left: 53px;
+  margin-top: 52px;
+  position: relative;
+  width: 1415px;
+}
+
+.question-installation .rectangle-2 {
+  background-color: var(--elephant);
+  border-radius: 76px;
+  height: 696px;
+  width: 1173px;
+}
+
+.question-installation .fichier-24x-1 {
+  height: 106px;
+  left: 65px;
+  object-fit: cover;
+  position: absolute;
+  top: 96px;
+  width: 118px;
+}
+
+.question-installation .group-12 {
+  left: 184px;
+  min-width: 226px;
+}
+
+.question-installation .overlap-group {
+  align-items: flex-end;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  min-width: 226px;
+  padding: 28px 50px;
+}
+
+.question-installation .usb-a {
+  min-width: 116px;
+}
+
+.question-installation .group-9 {
+  left: 474px;
+  min-width: 265px;
+}
+
+.question-installation .overlap-group1 {
+  height: 106px;
+  position: relative;
+  width: 263px;
+}
+
+.question-installation .rectangle-29 {
+  background-color: var(--mantis);
+  border-radius: 39px;
+  height: 106px;
+  width: 226px;
+}
+
+.question-installation .lightning {
+  left: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 31px;
+  width: 239px;
+}
+
+.question-installation .group-11 {
+  left: 762px;
+  min-width: 228px;
+}
+
+.question-installation .overlap-group2 {
+  align-items: flex-end;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  justify-content: flex-end;
+  min-width: 226px;
+  padding: 28px 44px;
+}
+
+.question-installation .usb-c {
+  width: 132px;
+}
+
+.question-installation .title {
+  left: 477px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 115px;
+}
+
+.question-installation .group {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  height: 106px;
+  position: absolute;
+  top: 464px;
+}
+
+.question-installation .rectangle {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.question-installation .usb {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 47px;
+}

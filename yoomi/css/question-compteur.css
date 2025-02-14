@@ -1,0 +1,105 @@
+/* screen - question-compteur */
+
+.question-compteur {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  padding: 0 53px;
+  width: 1280px;
+}
+
+.question-compteur .overlap-group2 {
+  align-items: center;
+  background-color: var(--elephant);
+  border-radius: 76px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 52px;
+  min-height: 696px;
+  padding: 95px 65px;
+  width: 1173px;
+}
+
+.question-compteur .flex-row {
+  align-items: flex-start;
+  align-self: flex-start;
+  display: flex;
+  gap: 294px;
+  height: 107px;
+  min-width: 630px;
+}
+
+.question-compteur .fichier-24x-1 {
+  align-self: flex-end;
+  height: 106px;
+  object-fit: cover;
+  width: 118px;
+}
+
+.question-compteur .title {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 65px;
+}
+
+.question-compteur .quel-lment-permet {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: 1.0px;
+  margin-top: 60px;
+  min-height: 94px;
+  text-align: center;
+  width: 818px;
+}
+
+.question-compteur .group-container {
+  gap: 61px;
+  height: 108px;
+  margin-right: 40.0px;
+  margin-top: 103px;
+  min-width: 601px;
+}
+
+.question-compteur .group-14 {
+  align-self: flex-end;
+  cursor: pointer;
+  min-width: 293px;
+}
+
+.question-compteur .overlap-group {
+  align-items: center;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  min-width: 291px;
+  padding: 0 23px;
+}
+
+.question-compteur .broches-en-fer {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 44px;
+  width: 245px;
+}
+
+.question-compteur .group-13 {
+  cursor: pointer;
+  min-width: 247px;
+}
+
+.question-compteur .overlap-group1 {
+  align-items: flex-end;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  min-width: 245px;
+  padding: 29px 14px;
+}
+
+.question-compteur .group {
+  align-items: flex-start;
+  display: flex;
+}

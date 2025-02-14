@@ -1,0 +1,415 @@
+/* screen - installation-3 */
+
+.installation-3 {
+  background-color: #eaeaea;
+  height: 800px;
+  opacity: 1;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1280px;
+}
+
+.installation-3 .ordi-config2-C61RwL {
+  --z-index: 0;
+  background-color: transparent;
+  background-image: url(../img/ordi-config2.png);
+  background-size: 100% 100%;
+  height: 626px;
+  left: 26px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 174px;
+  width: 574px;
+}
+
+.installation-3 .rectangle-25-C61RwL {
+  --z-index: 2;
+  background-color: #000000;
+  height: 5px;
+  left: 167px;
+  opacity: 1;
+  position: absolute;
+  top: 555px;
+  transform: rotate(30.00deg);
+  width: 10px;
+}
+
+.installation-3 .rectangle-26-C61RwL {
+  --z-index: 3;
+  background-color: #c9f6b6;
+  border-radius: 39px;
+  height: 226px;
+  left: 600px;
+  opacity: 1;
+  position: absolute;
+  top: 280px;
+  width: 463px;
+}
+
+.installation-3 .rectangle-27-C61RwL {
+  --z-index: 4;
+  background-color: #bcc9d9;
+  border-radius: 39px;
+  height: 114px;
+  left: 714px;
+  opacity: 1;
+  position: absolute;
+  top: 489px;
+  width: 463px;
+}
+
+.installation-3 .la-configuration-est-C61RwL {
+  --z-index: 5;
+  background-color: transparent;
+  color: #15383f;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 626px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 331px;
+  width: 411px;
+}
+
+.installation-3 .mais-avant-il-faut-C61RwL {
+  --z-index: 6;
+  background-color: transparent;
+  color: #15383f;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 740px;
+  letter-spacing: 0.00px;
+  line-height: 30px;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 500px;
+  width: 411px;
+}
+
+.installation-3 .fichier-3-C61RwL {
+  --z-index: 7;
+  background-color: transparent;
+  background-image: url(../img/fichier-3-9.svg);
+  background-size: 100% 100%;
+  cursor: pointer;
+  height: 52px;
+  left: 1088px;
+  opacity: 1;
+  position: absolute;
+  top: 652px;
+  width: 76px;
+}
+
+.installation-3 .ordi-tab-bord-1-C61RwL {
+  --z-index: 8;
+  background-color: transparent;
+  background-image: url(../img/ordi-tab-bord-1.png);
+  background-size: 100% 100%;
+  height: 490px;
+  left: 142px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 201px;
+  width: 449px;
+}
+
+.installation-3 .rcupre-les-donnes-C61RwL {
+  --z-index: 9;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 272px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 75px;
+  width: 737px;
+}
+
+.installation-3 .mascotte-yooni-vert-fonce-1-C61RwL {
+  --z-index: 10;
+  background-color: transparent;
+  background-image: url(../img/mascotte-yooni-vert-fonce--1@2x.png);
+  background-size: 100% 100%;
+  height: 71px;
+  left: 602px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 271px;
+  width: 77px;
+}
+
+.installation-3 .rectangle-16-C61RwL {
+  --z-index: 11;
+  background-color: #d9d9d9;
+  border-radius: 80px;
+  height: 17px;
+  left: 210px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 858px;
+}
+
+.installation-3 .line-7-C61RwL {
+  --z-index: 12;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 893px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.installation-3 .rectangle-17-C61RwL {
+  --z-index: 13;
+  background-color: #7ac05c;
+  height: 17px;
+  left: 210px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 436px;
+}
+
+.installation-3 .line-5-C61RwL {
+  --z-index: 14;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 344px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.installation-3 .line-6-C61RwL {
+  --z-index: 15;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 643px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.installation-3 .line-8-C61RwL {
+  --z-index: 16;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 1028px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+/* screen - compteur */
+
+.compteur {
+  background-color: #eaeaea;
+  height: 800px;
+  opacity: 1;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1280px;
+}
+
+.compteur .mascotte-yooni-retourne-1-C61RwL {
+  --z-index: 1;
+  background-color: transparent;
+  background-image: url(../img/mascotte-yooni-retourne--1@2x.png);
+  background-size: 100% 100%;
+  height: 240px;
+  left: 989px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  width: 280px;
+}
+
+.compteur .tape-1-ouvre-le-botier-C61RwL {
+  --z-index: 2;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 422px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 631px;
+  width: 437px;
+}
+
+.compteur .moodboard-maquette-sky-C61RwL {
+  --z-index: 3;
+  background-color: transparent;
+  background-image: url(../img/moodboard-maquette-sky@2x.png);
+  background-size: 100% 100%;
+  height: 411px;
+  left: 96px;
+  opacity: 1;
+  position: absolute;
+  top: 148px;
+  width: 379px;
+}
+
+.compteur .moodboard-maquette-sky-1-C61RwL {
+  --z-index: 4;
+  background-color: transparent;
+  background-image: url(../img/moodboard-maquette-sky-1.png);
+  background-size: 100% 100%;
+  height: 374px;
+  left: 108px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 174px;
+  width: 294px;
+}
+
+.compteur .arrow-2-C61RwL {
+  --z-index: 5;
+  background-color: transparent;
+  background-image: url(../img/arrow-2.svg);
+  background-size: 100% 100%;
+  height: 44px;
+  left: 313px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 311px;
+  width: 132px;
+}
+
+.compteur .connecte-x-ky-au-compteur-linky-C61RwL {
+  --z-index: 6;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 272px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 75px;
+  width: 737px;
+}
+
+.compteur .rectangle-16-C61RwL {
+  --z-index: 7;
+  background-color: #d9d9d9;
+  border-radius: 80px;
+  height: 17px;
+  left: 210px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 858px;
+}
+
+.compteur .line-7-C61RwL {
+  --z-index: 8;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 893px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.compteur .rectangle-17-C61RwL {
+  --z-index: 9;
+  background-color: #7ac05c;
+  border-radius: 80px;
+  height: 17px;
+  left: 210px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 505px;
+}
+
+.compteur .line-5-C61RwL {
+  --z-index: 10;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 344px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.compteur .line-6-C61RwL {
+  --z-index: 11;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 643px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.compteur .line-8-C61RwL {
+  --z-index: 12;
+  background-color: transparent;
+  background-image: url(../img/line-7.svg);
+  background-size: 100% 100%;
+  height: 17px;
+  left: 1028px;
+  opacity: 1;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}

@@ -1,0 +1,277 @@
+/* screen - presentation-yoomi-v2 */
+
+.presentation-yoomi-v2 {
+  background-color: #eaeaea;
+  height: 800px;
+  opacity: 1;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1280px;
+}
+
+.presentation-yoomi-v2 .x-ky-C61RwL {
+  --z-index: 1;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'HankRnd-Black', Helvetica;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 900;
+  height: auto;
+  left: 570px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 100px;
+  width: 140px;
+}
+
+.presentation-yoomi-v2 .rectangle-6-C61RwL {
+  --z-index: 2;
+  background-color: #7ac05c80;
+  border-radius: 39px;
+  height: 299px;
+  left: 671px;
+  opacity: 1;
+  position: absolute;
+  top: 274px;
+  transform: rotate(16.33deg);
+  width: 339px;
+}
+
+.presentation-yoomi-v2 .rectangle-7-C61RwL {
+  --z-index: 3;
+  background-color: #7ac05c80;
+  border-radius: 39px;
+  height: 299px;
+  left: 655px;
+  opacity: 1;
+  position: absolute;
+  top: 275px;
+  transform: rotate(163.32deg);
+  width: 339px;
+}
+
+.presentation-yoomi-v2 .rectangle-5-C61RwL {
+  --z-index: 4;
+  background-color: #7ac05c;
+  border-radius: 39px;
+  height: 306px;
+  left: 653px;
+  opacity: 1;
+  position: absolute;
+  top: 272px;
+  width: 344px;
+}
+
+.presentation-yoomi-v2 .fichier-24x-1-C61RwL {
+  --z-index: 5;
+  background-color: transparent;
+  background-image: url(../img/fichier-2-4x-1@2x.png);
+  background-size: 100% 100%;
+  height: 238px;
+  left: 246px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 315px;
+  width: 265px;
+}
+
+.presentation-yoomi-v2 .salut-moi-cest-yoo-C61RwL {
+  --z-index: 6;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 684px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 301px;
+  width: 282px;
+}
+
+.presentation-yoomi-v2 .fichier-3-C61RwL {
+  --z-index: 7;
+  background-color: transparent;
+  background-image: url(../img/fichier-3.svg);
+  background-size: 100% 100%;
+  cursor: pointer;
+  height: 52px;
+  left: 1088px;
+  opacity: 1;
+  position: absolute;
+  top: 652px;
+  width: 76px;
+}
+/* screen - brief-problematique */
+
+.brief-problematique {
+  background-color: #eaeaea;
+  height: 800px;
+  opacity: 1;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1280px;
+}
+
+.brief-problematique .x-ky-C61RwL {
+  --z-index: 1;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'HankRnd-Black', Helvetica;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 900;
+  height: auto;
+  left: 570px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  width: 140px;
+}
+
+.brief-problematique .rectangle-5-C61RwL {
+  --z-index: 2;
+  background-color: #7ac05c;
+  border-radius: 39px;
+  height: 154px;
+  left: 235px;
+  opacity: 1;
+  position: absolute;
+  top: 263px;
+  width: 687px;
+}
+
+.brief-problematique .fichier-24x-1-C61RwL {
+  --z-index: 3;
+  background-color: transparent;
+  background-image: url(../img/fichier-2-4x-1@2x.png);
+  background-size: 100% 100%;
+  height: 114px;
+  left: 155px;
+  object-fit: cover;
+  opacity: 1;
+  position: absolute;
+  top: 133px;
+  width: 127px;
+}
+
+.brief-problematique .vous-avez-du-mal-c-C61RwL {
+  --z-index: 4;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 258px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 286px;
+  width: 644px;
+}
+
+.brief-problematique .rectangle-6-C61RwL {
+  --z-index: 5;
+  background-color: #bcc9d9;
+  border-radius: 39px;
+  height: 101px;
+  left: 440px;
+  opacity: 1;
+  position: absolute;
+  top: 489px;
+  width: 687px;
+}
+
+.brief-problematique .x-ky-est-la-solution-C61RwL {
+  --z-index: 6;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 463px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 512px;
+  width: 644px;
+}
+
+.brief-problematique .component-1-C61RwL {
+  --z-index: 7;
+  background-color: transparent;
+  height: 43px;
+  left: 495px;
+  opacity: 1;
+  position: absolute;
+  top: 720px;
+  width: 329px;
+}
+
+.brief-problematique .rectangle-12-9p2GBv {
+  --z-index: 0;
+  background-color: #9af274;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 43px;
+  left: 0px;
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  width: 329px;
+}
+
+.brief-problematique .je-dcouvre-le-boitier-x-ky-9p2GBv {
+  --z-index: 1;
+  background-color: transparent;
+  color: #15383f;
+  font-family: 'Gallant Rounded-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  left: 20px;
+  letter-spacing: 0.00px;
+  line-height: normal;
+  opacity: 1;
+  position: absolute;
+  text-align: left;
+  top: 9px;
+  width: 262px;
+}
+
+.brief-problematique .fichier-1-9p2GBv {
+  --z-index: 2;
+  background-color: transparent;
+  background-image: url(../img/fichier-1.svg);
+  background-size: 100% 100%;
+  height: 19px;
+  left: 282px;
+  opacity: 1;
+  position: absolute;
+  top: 14px;
+  width: 28px;
+}

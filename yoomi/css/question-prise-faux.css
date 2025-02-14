@@ -1,0 +1,141 @@
+/* screen - question-prise-faux */
+
+.question-prise-faux {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  overflow: hidden;
+  width: 1280px;
+}
+
+.question-prise-faux .overlap-group2 {
+  height: 696px;
+  margin-left: 53px;
+  margin-top: 52px;
+  position: relative;
+  width: 1415px;
+}
+
+.question-prise-faux .rectangle-2 {
+  background-color: var(--elephant);
+  border-radius: 76px;
+  height: 696px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1173px;
+}
+
+.question-prise-faux .group-23 {
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  height: 106px;
+  left: 184px;
+  position: absolute;
+  top: 464px;
+  width: 226px;
+}
+
+.question-prise-faux .usb-a {
+  left: 236px;
+  position: absolute;
+  top: 494px;
+  width: 121px;
+}
+
+.question-prise-faux .overlap-group {
+  align-items: center;
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  left: 473px;
+  min-width: 226px;
+  padding: 0 27px;
+  position: absolute;
+  top: 464px;
+}
+
+.question-prise-faux .lightning {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 44px;
+  width: 172px;
+}
+
+.question-prise-faux .overlap-group1 {
+  align-items: center;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  left: 762px;
+  min-width: 226px;
+  padding: 0 47px;
+  position: absolute;
+  top: 464px;
+}
+
+.question-prise-faux .usb-c {
+  min-height: 44px;
+  width: 132px;
+}
+
+.question-prise-faux .title {
+  left: 477px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 115px;
+}
+
+.question-prise-faux .fichier-3 {
+  left: 1035px;
+}
+
+.question-prise-faux .fichier-4 {
+  left: 65px;
+}
+
+.question-prise-faux .rectangle-5 {
+  background-color: var(--loblolly);
+  border-radius: 21px;
+  height: 106px;
+  left: 52px;
+  position: absolute;
+  top: 94px;
+  width: 368px;
+}
+
+.question-prise-faux .oups-loup-si-tu-l {
+  left: 81px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 113px;
+  width: 310px;
+}
+
+.question-prise-faux .fichier-24x-5 {
+  height: 77px;
+  left: 25px;
+  object-fit: cover;
+  position: absolute;
+  top: 44px;
+  width: 78px;
+}
+
+.question-prise-faux .fichier {
+  cursor: pointer;
+  height: 52px;
+  position: absolute;
+  top: 600px;
+  width: 76px;
+}
+
+.question-prise-faux .usb {
+  letter-spacing: 0;
+  line-height: normal;
+}

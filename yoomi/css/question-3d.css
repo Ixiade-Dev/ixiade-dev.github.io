@@ -1,0 +1,132 @@
+/* screen - question-3d */
+
+.question-3d {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  padding: 0 53px;
+  width: 1280px;
+}
+
+.question-3d .overlap-group3 {
+  background-color: var(--elephant);
+  border-radius: 76px;
+  height: 696px;
+  margin-top: 52px;
+  position: relative;
+  width: 1173px;
+}
+
+.question-3d .overlap-group {
+  align-items: flex-start;
+  background-color: var(--elephant);
+  border-radius: 76px;
+  display: flex;
+  gap: 294px;
+  height: 652px;
+  left: 25px;
+  min-width: 1123px;
+  padding: 52.0px 41px;
+  position: absolute;
+  top: 0;
+}
+
+.question-3d .fichier-24x-4 {
+  height: 106px;
+  object-fit: cover;
+  width: 118px;
+}
+
+.question-3d .title {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: 5.0px;
+  min-height: 65px;
+}
+
+.question-3d .x-ky-permet-de {
+  left: 454px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 232px;
+  width: 364px;
+}
+
+.question-3d .group-24 {
+  left: 78px;
+  min-width: 305px;
+}
+
+.question-3d .overlap-group1 {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 179px;
+  min-width: 303px;
+  padding: 23px;
+}
+
+.question-3d .augmenter-sa-consommation-nergtique {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 132px;
+  text-align: center;
+  width: 257px;
+}
+
+.question-3d .group-8 {
+  left: 406px;
+  min-width: 362px;
+}
+
+.question-3d .overlap-group2 {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 179px;
+  justify-content: flex-end;
+  min-width: 360px;
+  padding: 19px 11.9px;
+}
+
+.question-3d .contrler-et-rduire {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 132px;
+  text-align: center;
+  width: 332px;
+}
+
+.question-3d .rectangle-28 {
+  background-color: var(--mantis);
+  border-radius: 39px;
+  height: 179px;
+  left: 801px;
+  position: absolute;
+  top: 357px;
+  width: 301px;
+}
+
+.question-3d .programmer-sa-machine-laver {
+  cursor: pointer;
+  left: 821px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 401px;
+  width: 260px;
+}
+
+.question-3d .group {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  height: 179px;
+  position: absolute;
+  top: 357px;
+}

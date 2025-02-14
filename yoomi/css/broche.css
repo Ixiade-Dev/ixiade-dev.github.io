@@ -1,0 +1,74 @@
+/* screen - broche */
+
+.broche {
+  align-items: flex-start;
+  display: flex;
+  overflow: hidden;
+  width: 866px;
+}
+
+.broche .broche-1 {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 50px;
+  display: flex;
+  height: 387px;
+  margin-left: 3428px;
+  margin-top: -990px;
+  overflow: hidden;
+  width: 866px;
+}
+
+.broche .overlap-group1 {
+  height: 332px;
+  position: relative;
+  width: 866px;
+}
+
+.broche .overlap-group {
+  height: 297px;
+  left: 98px;
+  position: absolute;
+  top: 35px;
+  width: 768px;
+}
+
+.broche .rectangle-6 {
+  background-color: var(--elephant);
+  border-radius: 39px;
+  height: 180px;
+  left: 0;
+  position: absolute;
+  top: 117px;
+  width: 463px;
+}
+
+.broche .la-carte-lectroniqu {
+  color: var(--gray-nurse);
+  font-family: var(--font-family-gallant_rounded-regular);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  left: 26px;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: absolute;
+  text-align: center;
+  top: 149px;
+  width: 411px;
+}
+
+.broche .carte-elec {
+  height: 278px;
+  left: 376px;
+  position: absolute;
+  top: 0;
+  width: 392px;
+}
+
+.broche .fichier-24x-1 {
+  height: 133px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 164px;
+}

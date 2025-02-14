@@ -1,0 +1,83 @@
+/* screen - fil */
+
+.fil {
+  align-items: flex-start;
+  display: flex;
+  overflow: hidden;
+  width: 866px;
+}
+
+.fil .fil-1 {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 50px;
+  display: flex;
+  gap: 101px;
+  height: 387px;
+  margin-left: 8634px;
+  margin-top: -2632px;
+  overflow: hidden;
+  width: 866px;
+}
+
+.fil .flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 316px;
+  width: 530px;
+}
+
+.fil .fichier-24x-1 {
+  height: 133px;
+  width: 164px;
+}
+
+.fil .overlap-group1 {
+  align-items: flex-end;
+  align-self: flex-end;
+  background-color: var(--elephant);
+  border-radius: 39px;
+  display: flex;
+  height: 167px;
+  min-width: 438px;
+  padding: 10px 8px;
+}
+
+.fil .les-broches-en-fer-p {
+  color: var(--gray-nurse);
+  font-family: var(--font-family-hammersmith_one);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 30px;
+  min-height: 125px;
+  text-align: center;
+  width: 422px;
+}
+
+.fil .overlap-group {
+  align-self: center;
+  height: 222px;
+  margin-bottom: 25.0px;
+  position: relative;
+  width: 140px;
+}
+
+.fil .carte-elec {
+  height: 211px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 140px;
+}
+
+.fil .rectangle-21 {
+  background-color: #4ea028;
+  height: 22px;
+  left: 0;
+  position: absolute;
+  top: 200px;
+  width: 121px;
+}

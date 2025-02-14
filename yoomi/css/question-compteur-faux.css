@@ -1,0 +1,143 @@
+/* screen - question-compteur-faux */
+
+.question-compteur-faux {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  padding: 0 53px;
+  width: 1280px;
+}
+
+.question-compteur-faux .overlap-group {
+  align-items: center;
+  background-color: var(--elephant);
+  border-radius: 76px;
+  display: flex;
+  gap: 40px;
+  height: 696px;
+  margin-top: 52px;
+  min-width: 1173px;
+  padding: 0 25px;
+}
+
+.question-compteur-faux .flex-col {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 608px;
+  width: 970px;
+}
+
+.question-compteur-faux .flex-row {
+  align-items: center;
+  display: flex;
+  gap: 57px;
+  min-width: 670px;
+}
+
+.question-compteur-faux .overlap-group1 {
+  height: 156px;
+  position: relative;
+  width: 395px;
+}
+
+.question-compteur-faux .rectangle-5 {
+  background-color: var(--loblolly);
+  border-radius: 21px;
+  height: 106px;
+  left: 27px;
+  position: absolute;
+  top: 50px;
+  width: 368px;
+}
+
+.question-compteur-faux .oups-loup-si-tu-l {
+  left: 56px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 77px;
+  width: 310px;
+}
+
+.question-compteur-faux .fichier-24x-5 {
+  height: 77px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 78px;
+}
+
+.question-compteur-faux .title {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: 11.0px;
+  min-height: 65px;
+  min-width: 218px;
+}
+
+.question-compteur-faux .quel-lment-permet {
+  align-self: flex-end;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: 62px;
+  min-height: 94px;
+  text-align: center;
+  width: 818px;
+}
+
+.question-compteur-faux .overlap-group-container {
+  align-items: flex-start;
+  align-self: center;
+  display: flex;
+  gap: 63px;
+  margin-left: 111.0px;
+  margin-top: 104px;
+  min-width: 599px;
+}
+
+.question-compteur-faux .overlap-group2 {
+  align-items: flex-start;
+  background-color: var(--mantis);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  min-width: 291px;
+  padding: 30px 24px;
+}
+
+.question-compteur-faux .broches-en-fer {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 44px;
+  width: 243px;
+}
+
+.question-compteur-faux .overlap-group3 {
+  align-items: flex-start;
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  display: flex;
+  height: 106px;
+  min-width: 245px;
+  padding: 29px 14px;
+}
+
+.question-compteur-faux .fichier-4 {
+  margin-left: 40px;
+  margin-top: 34px;
+}
+
+.question-compteur-faux .fichier-3 {
+  align-self: flex-end;
+  margin-bottom: 44px;
+}
+
+.question-compteur-faux .fichier {
+  cursor: pointer;
+  height: 52px;
+  width: 76px;
+}

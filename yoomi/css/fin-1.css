@@ -1,0 +1,14 @@
+/* screen - fin-1 */
+
+.fin-1 {
+  align-items: flex-start;
+  background-color: var(--elephant);
+  display: flex;
+  width: 1280px;
+}
+
+.fin-1 .capture-decran-2024-10-16-a-093348-1 {
+  height: 800px;
+  object-fit: cover;
+  width: 1280px;
+}

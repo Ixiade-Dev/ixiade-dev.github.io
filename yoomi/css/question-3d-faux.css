@@ -1,0 +1,164 @@
+/* screen - question-3d-faux */
+
+.question-3d-faux {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  padding: 0 53px;
+  width: 1280px;
+}
+
+.question-3d-faux .overlap-group1 {
+  height: 696px;
+  margin-top: 52px;
+  position: relative;
+  width: 1173px;
+}
+
+.question-3d-faux .fichier-24x-1 {
+  height: 106px;
+  left: 65px;
+  top: 96px;
+  width: 118px;
+}
+
+.question-3d-faux .overlap-group {
+  align-items: flex-start;
+  display: flex;
+  height: 652px;
+  justify-content: flex-end;
+  left: 25px;
+  min-width: 1123px;
+  padding: 57px 452px;
+  position: absolute;
+  top: 0;
+}
+
+.question-3d-faux .title {
+  letter-spacing: 0;
+  line-height: normal;
+  min-height: 65px;
+}
+
+.question-3d-faux .rectangle-26 {
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  height: 179px;
+  left: 84px;
+  position: absolute;
+  top: 357px;
+  width: 301px;
+}
+
+.question-3d-faux .rectangle-27 {
+  background-color: var(--mantis);
+  border-radius: 39px;
+  height: 179px;
+  left: 414px;
+  position: absolute;
+  top: 357px;
+  width: 358px;
+}
+
+.question-3d-faux .rectangle-28 {
+  background-color: var(--mahogany);
+  border-radius: 39px;
+  height: 179px;
+  left: 800px;
+  position: absolute;
+  top: 357px;
+  width: 301px;
+}
+
+.question-3d-faux .x-ky-permet-de {
+  left: 454px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 232px;
+  width: 364px;
+}
+
+.question-3d-faux .augmenter-sa-consommation-nergtique {
+  left: 106px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 379px;
+  width: 257px;
+}
+
+.question-3d-faux .contrler-et-rduire {
+  left: 417px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 379px;
+  width: 352px;
+}
+
+.question-3d-faux .programmer-sa-machine-laver {
+  left: 812px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 401px;
+  width: 277px;
+}
+
+.question-3d-faux .fichier-3 {
+  left: 1035px;
+}
+
+.question-3d-faux .fichier-4 {
+  left: 65px;
+}
+
+.question-3d-faux .rectangle-5 {
+  background-color: var(--loblolly);
+  border-radius: 21px;
+  height: 106px;
+  left: 52px;
+  position: absolute;
+  top: 94px;
+  width: 368px;
+}
+
+.question-3d-faux .oups-loup-si-tu-l {
+  left: 81px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 121px;
+  width: 310px;
+}
+
+.question-3d-faux .fichier-24x-5 {
+  height: 77px;
+  left: 25px;
+  top: 44px;
+  width: 78px;
+}
+
+.question-3d-faux .fichier {
+  cursor: pointer;
+  height: 52px;
+  position: absolute;
+  top: 600px;
+  width: 76px;
+}
+
+.question-3d-faux .fichier-24x {
+  object-fit: cover;
+  position: absolute;
+}
+
+.question-3d-faux .overlap {
+  background-color: var(--elephant);
+  border-radius: 76px;
+}

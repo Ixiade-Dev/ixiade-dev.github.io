@@ -1,0 +1,120 @@
+/* screen - compteur-avec */
+
+.compteur-avec {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  padding: 0 11.5px;
+  width: 1280px;
+}
+
+.compteur-avec .overlap-group {
+  height: 748px;
+  margin-left: 42px;
+  position: relative;
+  width: 1216px;
+}
+
+.compteur-avec .rectangle-2 {
+  background-color: var(--elephant);
+  border-radius: 76px;
+  height: 696px;
+  left: 0;
+  position: absolute;
+  top: 52px;
+  width: 1173px;
+}
+
+.compteur-avec .x13-removebg-preview-1 {
+  height: 171px;
+  left: 253px;
+  object-fit: cover;
+  position: absolute;
+  top: 337px;
+  width: 128px;
+}
+
+.compteur-avec .fichier-3 {
+  cursor: pointer;
+  height: 52px;
+  left: 1035px;
+  position: absolute;
+  top: 631px;
+  width: 76px;
+}
+
+.compteur-avec .title {
+  left: 219px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 75px;
+  width: 737px;
+}
+
+.compteur-avec .mascotte-yooni-retourne-1 {
+  height: 240px;
+  left: 936px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 280px;
+}
+
+.compteur-avec .bravo-x-ky-est-prt {
+  color: var(--white);
+  font-family: var(--font-family-gallant_rounded-regular);
+  font-size: var(--font-size-l);
+  font-weight: 400;
+  left: 244px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 582px;
+  width: 732px;
+}
+
+.compteur-avec .rectangle-16 {
+  background-color: var(--alto);
+  border-radius: 80px;
+  height: 17px;
+  left: 157px;
+  position: absolute;
+  top: 700px;
+  width: 858px;
+}
+
+.compteur-avec .line-7 {
+  left: 840px;
+}
+
+.compteur-avec .rectangle-17 {
+  background-color: var(--mantis);
+  height: 17px;
+  left: 157px;
+  position: absolute;
+  top: 700px;
+  width: 685px;
+}
+
+.compteur-avec .line-5 {
+  left: 291px;
+}
+
+.compteur-avec .line-6 {
+  left: 590px;
+}
+
+.compteur-avec .line-8 {
+  left: 975px;
+}
+
+.compteur-avec .line {
+  height: 17px;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}

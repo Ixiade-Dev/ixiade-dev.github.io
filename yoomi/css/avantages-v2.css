@@ -1,0 +1,145 @@
+/* screen - avantages-v2 */
+
+.avantages-v2 {
+  align-items: flex-start;
+  background-color: var(--gray-nurse);
+  display: flex;
+  height: 800px;
+  width: 1280px;
+}
+
+.avantages-v2 .overlap-group {
+  height: 748px;
+  position: relative;
+  width: 1226px;
+}
+
+.avantages-v2 .rectangle-2 {
+  background-color: var(--elephant);
+  border-radius: 76px;
+  height: 696px;
+  left: 53px;
+  position: absolute;
+  top: 52px;
+  width: 1173px;
+}
+
+.avantages-v2 .piece-3d-v2 {
+  height: 604px;
+  left: 212px;
+  object-fit: cover;
+  position: absolute;
+  top: 90px;
+  width: 816px;
+}
+
+.avantages-v2 .dcouvre-les-avantages-dx-ky {
+  left: 807px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 81px;
+  width: 389px;
+}
+
+.avantages-v2 .fichier-3 {
+  cursor: pointer;
+  height: 52px;
+  left: 1098px;
+  position: absolute;
+  top: 668px;
+  width: 76px;
+}
+
+.avantages-v2 .trouve-les-4-avantag {
+  left: 73px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 162px;
+  width: 207px;
+}
+
+.avantages-v2 .rond-2 {
+  left: 512px;
+  top: 403px;
+}
+
+.avantages-v2 .rond-3 {
+  left: 358px;
+  top: 354px;
+}
+
+.avantages-v2 .rond-4 {
+  left: 582px;
+  top: 288px;
+}
+
+.avantages-v2 .rond-5 {
+  left: 719px;
+  top: 472px;
+}
+
+.avantages-v2 .rond-6 {
+  left: 677px;
+  top: 265px;
+}
+
+.avantages-v2 .mascotte-yooni-retourne-1 {
+  height: 179px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 197px;
+}
+
+.avantages-v2 .rectangle-16 {
+  background-color: var(--alto);
+  border-radius: 80px;
+  height: 17px;
+  left: 210px;
+  position: absolute;
+  top: 700px;
+  width: 858px;
+}
+
+.avantages-v2 .line-7 {
+  left: 893px;
+}
+
+.avantages-v2 .line-8 {
+  left: 1028px;
+}
+
+.avantages-v2 .rectangle-17 {
+  background-color: var(--mantis);
+  height: 17px;
+  left: 210px;
+  position: absolute;
+  top: 700px;
+  width: 818px;
+}
+
+.avantages-v2 .line-5 {
+  left: 344px;
+}
+
+.avantages-v2 .line-6 {
+  left: 643px;
+}
+
+.avantages-v2 .line {
+  height: 17px;
+  position: absolute;
+  top: 700px;
+  width: 4px;
+}
+
+.avantages-v2 .rond {
+  height: 17px;
+  position: absolute;
+  width: 16px;
+}

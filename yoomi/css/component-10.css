@@ -1,0 +1,39 @@
+/* screen - component-10 */
+
+.component-10 {
+  align-items: flex-start;
+  display: flex;
+  min-width: 389px;
+}
+
+.component-10 .overlap-group {
+  height: 189px;
+  margin-left: 1178px;
+  margin-top: -2349px;
+  position: relative;
+  width: 389px;
+}
+
+.component-10 .rectangle-37 {
+  background-color: var(--mantis);
+  border-radius: 44px;
+  height: 140px;
+  left: 44px;
+  position: absolute;
+  top: 49px;
+  width: 345px;
+}
+
+.component-10 .x-ky-permet-de-conna {
+  color: var(--white);
+  font-family: var(--font-family-gallant_rounded-black);
+  font-size: var(--font-size-s);
+  font-weight: 900;
+  left: 95px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 68px;
+  width: 273px;
+}
